@@ -1,7 +1,7 @@
 
 export default function PlantaPage() {
     return (
-        <main className="max-w-5xl mx-auto px-4 py-12">
+        <main className="max-w-6xl mx-auto px-4 py-12">
             <h1 className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8">
                 Descubre dónde transformamos los residuos en oportunidades
             </h1>

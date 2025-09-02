@@ -14,7 +14,7 @@ export default function Header() {
   const navigationItems = [
     { name: "Inicio", href: "/" },
     { name: "Nosotros", href: "#" },
-    { name: "Servicios", href: "#" },
+    { name: "Servicios", href: "/servicios" },
     { name: "Planta", href: "/planta" },
     { name: "Productos", href: "#" },
     { name: "Contacto", href: "#" },
