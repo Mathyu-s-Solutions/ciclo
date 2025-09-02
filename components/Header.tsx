@@ -16,7 +16,7 @@ export default function Header() {
     { name: "Nosotros", href: "#" },
     { name: "Servicios", href: "/servicios" },
     { name: "Planta", href: "/planta" },
-    { name: "Productos", href: "#" },
+    { name: "Productos", href: "/productos" },
     { name: "Contacto", href: "#" },
   ].map(item => ({
     ...item,
