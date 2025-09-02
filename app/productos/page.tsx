@@ -50,7 +50,7 @@ export default function ProductosPage() {
                 <h1 className="mb-8 max-w-full text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8">
                     Conoce nuestros productos
                 </h1>
-                <div className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10">
+                <div className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10 bg-[#F2F2F2]">
                     {productos.map((p) => (
                         <button
                             key={p.key}
