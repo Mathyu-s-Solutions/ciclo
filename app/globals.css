@@ -55,3 +55,11 @@ p {
   line-height: 140%;
   letter-spacing: 0;
 }
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #1F1B3B;
+  line-height: 140%;
+  letter-spacing: 0;
+}
