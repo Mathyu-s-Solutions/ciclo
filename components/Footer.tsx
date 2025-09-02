@@ -19,7 +19,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="min-w-[120px]">
-                    <h3 className="font-poppins font-semibold text-lg md:text-xl lg:text-2xl mb-6">Servicios</h3>
+                    <h3 className="font-poppins font-medium text-lg md:text-xl lg:text-2xl mb-6">Servicios</h3>
                     <ul className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
                         <li className="text-base md:text-sm lg:text-sm">Gestión Integral</li>
                         <li className="text-base md:text-sm lg:text-sm">Reciclaje RCD</li>
@@ -27,7 +27,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="min-w-[120px]">
-                    <h3 className="font-poppins font-semibold text-lg md:text-xl lg:text-2xl mb-6">Productos</h3>
+                    <h3 className="font-poppins font-medium text-lg md:text-xl lg:text-2xl mb-6">Productos</h3>
                     <ul className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
                         <li className="text-base md:text-sm lg:text-sm">Ecoadoquines</li>
                         <li className="text-base md:text-sm lg:text-sm">Bloques</li>
@@ -35,7 +35,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="min-w-[150px]">
-                    <h3 className="font-poppins font-semibold text-lg md:text-xl lg:text-2xl mb-6">Contacto</h3>
+                    <h3 className="font-poppins font-medium text-lg md:text-xl lg:text-2xl mb-6">Contacto</h3>
                     <ul className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
                         <li className="text-base md:text-sm lg:text-sm">Av. Santa Rosa Parcela P-48,<br />Santa Rosa de Collanac,<br />Cieneguilla, Lima.</li>
                         <li className="text-base md:text-sm lg:text-sm">+51 901 211 995</li>
@@ -45,8 +45,8 @@ const Footer = () => {
             </div>
             <div className="border-t border-[#C9A86A] my-6"></div>
             <div className="flex flex-col md:flex-row justify-between text-base md:text-sm lg:text-sm items-center text-[#F2F2F2]/80 w-full">
-                <span className="w-full md:w-auto text-left truncate font-poppins font-semibold text-base md:text-sm lg:text-sm">© 2025 Ciclo.com. Todos los derechos reservados.</span>
-                <a href="#" className="font-poppins font-semibold text-base md:text-sm lg:text-sm text-[#2451D7] hover:underline mt-2 md:mt-0">Términos y Condiciones</a>
+                <span className="w-full md:w-auto text-left truncate font-poppins font-medium text-base md:text-sm lg:text-sm">© 2025 Ciclo.com. Todos los derechos reservados.</span>
+                <a href="#" className="font-poppins font-medium text-base md:text-sm lg:text-sm text-[#2451D7] hover:underline mt-2 md:mt-0">Términos y Condiciones</a>
             </div>
         </footer>
     );
