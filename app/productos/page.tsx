@@ -73,6 +73,12 @@ export default function ProductosPage() {
                             <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             <p className="mb-2">Permisos y autorizaciones</p>
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <div className="mt-6">
+                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                    Ficha Técnica
+                                    <span className="text-lg">↓</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
@@ -87,6 +93,12 @@ export default function ProductosPage() {
                             <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             <p className="mb-2">Beneficios Ambientales</p>
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <div className="mt-6">
+                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                    Ficha Técnica
+                                    <span className="text-lg">↓</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
@@ -101,6 +113,12 @@ export default function ProductosPage() {
                             <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             <p className="mb-2">Más beneficios</p>
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <div className="mt-6">
+                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                    Ficha Técnica
+                                    <span className="text-lg">↓</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
@@ -115,6 +133,12 @@ export default function ProductosPage() {
                             <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             <p className="mb-2">Beneficio extra</p>
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <div className="mt-6">
+                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                    Ficha Técnica
+                                    <span className="text-lg">↓</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
