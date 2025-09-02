@@ -14,8 +14,8 @@ export default function Header() {
   const navigationItems = [
     { name: "Inicio", href: "/" },
     { name: "Nosotros", href: "#" },
-    { name: "Planta", href: "/planta" },
     { name: "Servicios", href: "#" },
+    { name: "Planta", href: "/planta" },
     { name: "Productos", href: "#" },
     { name: "Contacto", href: "#" },
   ].map(item => ({
