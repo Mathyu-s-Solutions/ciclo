@@ -1,13 +1,16 @@
 
+"use client";
+
+import Image from "next/image";
 const Footer = () => {
     return (
         <footer className="bg-[#1F1B3B] text-[#F2F2F2] pt-20 pb-30 px-6 md:px-12 lg:px-32">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-x-8 md:gap-x-10 lg:gap-x-16 gap-y-8 text-[#F2F2F2]">
                 <div className="sm:col-span-2 md:col-span-2 lg:col-span-2 flex flex-col min-w-[180px] md:max-w-sm lg:max-w-md">
                     <div className="mb-1">
-                        <img src="/img/ciclo-white.png" alt="Ciclo Logo" className="h-22 w-auto" />
+                        <Image src="/img/ciclo-white.png" alt="Ciclo Logo" width={140} height={45} />
                     </div>
-                    <p className="font-poppins font-normal text-base md:text-sm lg:text-sm mb-8 text-[#F2F2F2] max-w-xs md:max-w-sm lg:max-w-md text-left break-words">A collection of components for your startup business or side project.</p>
+                    <h3 className="font-poppins font-normal text-base md:text-sm lg:text-sm mb-8 text-[#F2F2F2] max-w-xs md:max-w-sm lg:max-w-md text-left break-words">A collection of components for your startup business or side project.</h3>
                     <div className="flex gap-4 text-2xl text-[#4F5BFF]">
                         <a href="#" aria-label="YouTube"><svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.108-2.115C19.073 3.5 12 3.5 12 3.5s-7.073 0-9.39.571A2.994 2.994 0 0 0 .502 6.186C0 8.504 0 12 0 12s0 3.496.502 5.814a2.994 2.994 0 0 0 2.108 2.115C4.927 20.5 12 20.5 12 20.5s7.073 0 9.39-.571a2.994 2.994 0 0 0 2.108-2.115C24 15.496 24 12 24 12s0-3.496-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg></a>
                         <a href="#" aria-label="Facebook"><svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.405 24 24 23.408 24 22.674V1.326C24 .592 23.405 0 22.675 0" /></svg></a>
@@ -33,11 +36,11 @@ const Footer = () => {
                 </div>
                 <div className="min-w-[150px]">
                     <h3 className="font-poppins font-semibold text-lg md:text-xl lg:text-2xl mb-6">Contacto</h3>
-                    <div className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
-                        <p className="text-base md:text-sm lg:text-sm">Av. Santa Rosa Parcela P-48,<br />Santa Rosa de Collanac,<br />Cieneguilla, Lima.</p>
-                        <p className="text-base md:text-sm lg:text-sm">+51 901 211 995</p>
-                        <p className="text-base md:text-sm lg:text-sm">ventas@ciclo.com.pe</p>
-                    </div>
+                    <ul className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
+                        <li className="text-base md:text-sm lg:text-sm">Av. Santa Rosa Parcela P-48,<br />Santa Rosa de Collanac,<br />Cieneguilla, Lima.</li>
+                        <li className="text-base md:text-sm lg:text-sm">+51 901 211 995</li>
+                        <li className="text-base md:text-sm lg:text-sm">ventas@ciclo.com.pe</li>
+                    </ul>
                 </div>
             </div>
             <div className="border-t border-[#C9A86A] my-6"></div>
