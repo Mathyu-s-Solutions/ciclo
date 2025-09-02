@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F2F2F2;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #F2F2F2;
+    --foreground: #171717;
   }
 }
 
@@ -21,7 +27,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom styles for better visual match with Figma */
 .text-gradient {
   background: linear-gradient(135deg, #3b82f6, #1e40af);
   background-clip: text;
@@ -32,4 +37,21 @@ body {
 .shadow-custom {
   box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1),
     0 10px 10px -5px rgba(59, 130, 246, 0.04);
+}
+
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #1F1B3B;
+  line-height: 124.5%;
+  letter-spacing: 0;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #1F1B3B;
+  line-height: 140%;
+  letter-spacing: 0;
 }
