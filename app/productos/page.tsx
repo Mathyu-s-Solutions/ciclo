@@ -61,10 +61,9 @@ export default function ProductosPage() {
                     ))}
                 </div>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
-                    <div ref={productos[0].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-32">
+                    <div ref={productos[0].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end">
-                            <div className="flex items-center justify-center w-[400px] h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
-                                <div className="absolute" style={{ left: '60px', top: '32px', width: '32px', height: '32px', borderRadius: '50%', border: '2px solid #2451D7', background: '#2451D7', zIndex: 10 }}></div>
+                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <Image src="/pages/productos/agregados.png" alt="Servicio 1" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
@@ -76,10 +75,9 @@ export default function ProductosPage() {
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                         </div>
                     </div>
-                    <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-32">
+                    <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start">
-                            <div className="flex items-center justify-center w-[400px] h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
-                                <div className="absolute" style={{ right: '60px', top: '32px', width: '32px', height: '32px', borderRadius: '50%', border: '2px solid #2451D7', background: '#2451D7', zIndex: 10 }}></div>
+                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <Image src="/pages/productos/adoquin.png" alt="Servicio 2" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
@@ -91,10 +89,9 @@ export default function ProductosPage() {
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                         </div>
                     </div>
-                    <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-32">
+                    <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
-                            <div className="flex items-center justify-center w-[400px] h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
-                                <div className="absolute" style={{ left: '60px', bottom: '32px', width: '32px', height: '32px', borderRadius: '50%', border: '2px solid #2451D7', background: '#2451D7', zIndex: 10 }}></div>
+                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <Image src="/pages/productos/ladrillo.png" alt="Servicio 3" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
@@ -106,10 +103,9 @@ export default function ProductosPage() {
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                         </div>
                     </div>
-                    <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-32">
+                    <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
-                            <div className="flex items-center justify-center w-[400px] h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
-                                <div className="absolute" style={{ right: '60px', bottom: '32px', width: '32px', height: '32px', borderRadius: '50%', border: '2px solid #2451D7', background: '#2451D7', zIndex: 10 }}></div>
+                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <Image src="/pages/productos/separadores.png" alt="Servicio 4" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
