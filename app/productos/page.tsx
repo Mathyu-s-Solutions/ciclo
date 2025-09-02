@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import type { RefObject } from "react";
 import Image from "next/image";
+import '../../styles/spin-variable.css';
 
 interface Producto {
     key: string;
@@ -64,6 +65,9 @@ export default function ProductosPage() {
                     <div ref={productos[0].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                                <div className="absolute inset-0 flex items-center justify-center spin-variable">
+                                    <div className="absolute top-0 left-1/2 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, -50%)' }}></div>
+                                </div>
                                 <Image src="/pages/productos/agregados.png" alt="Servicio 1" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
@@ -84,6 +88,9 @@ export default function ProductosPage() {
                     <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                                <div className="absolute inset-0 flex items-center justify-center spin-variable">
+                                    <div className="absolute top-1/2 right-0 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(50%, -50%)' }}></div>
+                                </div>
                                 <Image src="/pages/productos/adoquin.png" alt="Servicio 2" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
@@ -104,6 +111,9 @@ export default function ProductosPage() {
                     <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                                <div className="absolute inset-0 flex items-center justify-center spin-variable">
+                                    <div className="absolute bottom-0 left-1/2 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, 50%)' }}></div>
+                                </div>
                                 <Image src="/pages/productos/ladrillo.png" alt="Servicio 3" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
@@ -124,6 +134,9 @@ export default function ProductosPage() {
                     <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                                <div className="absolute inset-0 flex items-center justify-center spin-variable">
+                                    <div className="absolute top-1/2 left-0 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, -50%)' }}></div>
+                                </div>
                                 <Image src="/pages/productos/separadores.png" alt="Servicio 4" width={220} height={220} className="object-contain" />
                             </div>
                         </div>
