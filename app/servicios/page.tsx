@@ -8,7 +8,7 @@ export default function ServiciosPage() {
                     Aprende más de nuestros servicios
                 </h1>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col md:flex-row items-center gap-8">
+                    <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                         <div className="w-full md:w-1/2">
                             <h2 className="text-base sm:text-xl lg:text-2xl text-left mb-4">Subtitulo 1</h2>
                             <p className="mb-2">Descriptivo</p>
@@ -16,12 +16,12 @@ export default function ServiciosPage() {
                             <p className="mb-2">Permisos y autorizaciones</p>
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                         </div>
-                        <div className="w-full md:w-1/2 flex justify-end">
+                        <div className="w-full md:w-1/2 flex justify-start">
                             <Image src="/pages/servicios/5-Servicios.webp" alt="Servicio 1" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-                        <div className="flex flex-col md:flex-row-reverse items-center gap-8">
+                        <div className="flex flex-col md:flex-row items-center gap-8">
                             <div className="w-full md:w-1/2">
                                 <h2 className="text-base sm:text-xl lg:text-2xl text-left mb-4">Subtitulo 2</h2>
                                 <p className="mb-2">Medios digitales - Plataforma Recylink</p>
@@ -29,13 +29,13 @@ export default function ServiciosPage() {
                                 <p className="mb-2">Beneficios Ambientales</p>
                                 <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             </div>
-                            <div className="w-full md:w-1/2 flex justify-start">
+                            <div className="w-full md:w-1/2 flex justify-end">
                                 <Image src="/pages/servicios/5-Servicios2.webp" alt="Servicio 2" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row items-center gap-8">
-                        <div className="flex flex-col md:flex-row items-center gap-8">
+                        <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                             <div className="w-full md:w-1/2">
                                 <h2 className="text-base sm:text-xl lg:text-2xl text-left mb-4">Subtitulo 3</h2>
                                 <p className="mb-2">Descripción adicional</p>
@@ -43,13 +43,13 @@ export default function ServiciosPage() {
                                 <p className="mb-2">Más beneficios</p>
                                 <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             </div>
-                            <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
+                            <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
                                 <Image src="/pages/servicios/5-Servicios.webp" alt="Servicio 3" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-                        <div className="flex flex-col md:flex-row-reverse items-center gap-8">
+                        <div className="flex flex-col md:flex-row items-center gap-8">
                             <div className="w-full md:w-1/2">
                                 <h2 className="text-base sm:text-xl lg:text-2xl text-left mb-4">Subtitulo 4</h2>
                                 <p className="mb-2">Título adicional</p>
@@ -57,7 +57,7 @@ export default function ServiciosPage() {
                                 <p className="mb-2">Beneficio extra</p>
                                 <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             </div>
-                            <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
+                            <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
                                 <Image src="/pages/servicios/5-Servicios2.webp" alt="Servicio 4" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                             </div>
                         </div>
