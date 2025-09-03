@@ -57,7 +57,7 @@ export default function ProductosPage() {
                         <button
                             key={p.key}
                             onClick={() => handleClick(p.key)}
-                            className={`px-6 py-2 rounded-lg border font-medium transition-colors duration-200 ${active === p.key ? "bg-[#2451D7] text-[#F2F2F2] border-[#2451D7]" : "text-[#2451D7] border-[#2451D7] bg-[#F2F2F2]"}`}
+                            className={`px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer ${active === p.key ? "bg-[#2451D7] text-[#F2F2F2] border-[#2451D7]" : "text-[#2451D7] border-[#2451D7] bg-[#F2F2F2]"}`}
                         >
                             {p.label}
                         </button>
@@ -80,7 +80,7 @@ export default function ProductosPage() {
                             <p className="mb-2">Permisos y autorizaciones</p>
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             <div className="mt-6">
-                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer">
                                     Ficha Técnica
                                     <span className="text-lg">↓</span>
                                 </button>
@@ -166,7 +166,7 @@ export default function ProductosPage() {
                     </div>
                     <div className="w-full md:w-1/3 flex md:justify-end justify-center">
                         <button
-                            className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200"
+                            className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200 cursor-pointer"
                             onClick={() => router.push('/contacto')}
                         >
                             Contáctanos

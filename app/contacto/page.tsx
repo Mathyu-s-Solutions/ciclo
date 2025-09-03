@@ -105,7 +105,7 @@ export default function ContactoPage() {
                                     />
                                     {errors.mensaje && <span className="text-red-500 text-sm">{errors.mensaje}</span>}
 
-                                    <button type="submit" className="bg-[#1F1B3B] text-[#FFD34E] font-medium px-6 py-2 rounded-lg mt-4 hover:bg-[#FFD34E] hover:text-[#1F1B3B] transition-colors duration-200">
+                                    <button type="submit" className="bg-[#1F1B3B] text-[#FFD34E] font-medium px-6 py-2 rounded-lg mt-4 hover:bg-[#FFD34E] hover:text-[#1F1B3B] transition-colors duration-200 cursor-pointer">
                                         Enviar
                                     </button>
                                 </form>

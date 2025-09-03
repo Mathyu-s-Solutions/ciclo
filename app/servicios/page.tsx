@@ -74,7 +74,7 @@ export default function ServiciosPage() {
                     <h3 className="text-[#F2F2F2] !important text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">¿Quieres ser parte del cambio?</h3>
                     <h3 className="text-[#F2F2F2] !important text-xl sm:text-3xl mb-8">Juntos dejaremos una huella positiva a las futuras generaciones.</h3>
                     <button
-                        className="font-poppins inline-block font-light text-2xl underline underline-offset-4 px-8 py-4 rounded-lg transition-colors duration-200 hover:bg-[#F2F2F2]"
+                        className="font-poppins inline-block font-light text-2xl underline underline-offset-4 px-8 py-4 rounded-lg transition-colors duration-200 hover:bg-[#F2F2F2] cursor-pointer"
                         onClick={() => router.push('/contacto')}
                     >
                         Únete a nosotros &nbsp; &gt;
