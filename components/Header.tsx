@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
 
@@ -10,14 +11,14 @@ export default function Header() {
   const [highlightStyle, setHighlightStyle] = useState<{ left: number; width: number } | null>(null);
   const navRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
-  const currentPath = typeof window !== "undefined" ? window.location.pathname : "/";
+  const currentPath = usePathname();
   const navigationItems = [
     { name: "Inicio", href: "/" },
     { name: "Nosotros", href: "#" },
     { name: "Servicios", href: "/servicios" },
     { name: "Planta", href: "/planta" },
     { name: "Productos", href: "/productos" },
-    { name: "Contacto", href: "#" },
+    { name: "Contacto", href: "/contacto" },
   ].map(item => ({
     ...item,
     isActive: item.href !== "#" && currentPath === item.href

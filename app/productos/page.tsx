@@ -1,6 +1,7 @@
 "use client"
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import type { RefObject } from "react";
 import Image from "next/image";
 import '../../styles/spin-variable.css';
@@ -12,6 +13,7 @@ interface Producto {
 }
 
 export default function ProductosPage() {
+    const router = useRouter();
     const productos: Producto[] = [
         {
             key: "agregados",
@@ -36,6 +38,35 @@ export default function ProductosPage() {
     ];
     const [active, setActive] = useState<string>(productos[0].key);
 
+    useEffect(() => {
+        const sectionRefs = productos.map(p => p.ref.current).filter(Boolean);
+        if (sectionRefs.length === 0) return;
+        const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+            const visible = entries.filter(e => e.isIntersecting);
+            if (visible.length > 0) {
+                const sorted = visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+                const idx = sectionRefs.findIndex(ref => ref === sorted[0].target);
+                if (productos[idx] && productos[idx].key !== active) {
+                    setActive(productos[idx].key);
+                }
+            }
+        };
+        const observer = new window.IntersectionObserver(handleIntersect, {
+            root: null,
+            rootMargin: "-30% 0px -60% 0px",
+            threshold: 0.1,
+        });
+        sectionRefs.forEach(ref => {
+            if (ref) observer.observe(ref);
+        });
+        return () => {
+            sectionRefs.forEach(ref => {
+                if (ref) observer.unobserve(ref);
+            });
+            observer.disconnect();
+        };
+    }, [productos, active]);
+
     const handleClick = (key: string) => {
         setActive(key);
         const prod = productos.find(p => p.key === key);
@@ -55,7 +86,7 @@ export default function ProductosPage() {
                         <button
                             key={p.key}
                             onClick={() => handleClick(p.key)}
-                            className={`px-6 py-2 rounded-lg border font-medium transition-colors duration-200 ${active === p.key ? "bg-[#2451D7] text-[#F2F2F2] border-[#2451D7]" : "text-[#2451D7] border-[#2451D7] bg-[#F2F2F2]"}`}
+                            className={`px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer ${active === p.key ? "bg-[#2451D7] text-[#F2F2F2] border-[#2451D7]" : "text-[#2451D7] border-[#2451D7] bg-[#F2F2F2]"}`}
                         >
                             {p.label}
                         </button>
@@ -78,7 +109,7 @@ export default function ProductosPage() {
                             <p className="mb-2">Permisos y autorizaciones</p>
                             <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
                             <div className="mt-6">
-                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer">
                                     Ficha Técnica
                                     <span className="text-lg">↓</span>
                                 </button>
@@ -163,7 +194,12 @@ export default function ProductosPage() {
                         <h1 className="text-xl sm:text-3xl mb-8">Contáctanos y desarrollaremos una solución a la medida de tus necesidades.</h1>
                     </div>
                     <div className="w-full md:w-1/3 flex md:justify-end justify-center">
-                        <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200">Contáctanos</button>
+                        <button
+                            className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200 cursor-pointer"
+                            onClick={() => router.push('/contacto')}
+                        >
+                            Contáctanos
+                        </button>
                     </div>
                 </div>
             </section>
