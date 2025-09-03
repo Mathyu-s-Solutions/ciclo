@@ -64,6 +64,14 @@ h2 {
   letter-spacing: 0;
 }
 
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #F2F2F2;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
 
 h4 {
   font-family: 'Poppins', sans-serif;

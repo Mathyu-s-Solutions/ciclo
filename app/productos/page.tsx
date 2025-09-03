@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { RefObject } from "react";
 import Image from "next/image";
 import '../../styles/spin-variable.css';
@@ -12,6 +13,7 @@ interface Producto {
 }
 
 export default function ProductosPage() {
+    const router = useRouter();
     const productos: Producto[] = [
         {
             key: "agregados",
@@ -163,7 +165,12 @@ export default function ProductosPage() {
                         <h1 className="text-xl sm:text-3xl mb-8">Contáctanos y desarrollaremos una solución a la medida de tus necesidades.</h1>
                     </div>
                     <div className="w-full md:w-1/3 flex md:justify-end justify-center">
-                        <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200">Contáctanos</button>
+                        <button
+                            className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200"
+                            onClick={() => router.push('/contacto')}
+                        >
+                            Contáctanos
+                        </button>
                     </div>
                 </div>
             </section>
