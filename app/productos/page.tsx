@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import type { RefObject } from "react";
 import Image from "next/image";
@@ -37,6 +37,35 @@ export default function ProductosPage() {
         },
     ];
     const [active, setActive] = useState<string>(productos[0].key);
+
+    useEffect(() => {
+        const sectionRefs = productos.map(p => p.ref.current).filter(Boolean);
+        if (sectionRefs.length === 0) return;
+        const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+            const visible = entries.filter(e => e.isIntersecting);
+            if (visible.length > 0) {
+                const sorted = visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+                const idx = sectionRefs.findIndex(ref => ref === sorted[0].target);
+                if (productos[idx] && productos[idx].key !== active) {
+                    setActive(productos[idx].key);
+                }
+            }
+        };
+        const observer = new window.IntersectionObserver(handleIntersect, {
+            root: null,
+            rootMargin: "-30% 0px -60% 0px",
+            threshold: 0.1,
+        });
+        sectionRefs.forEach(ref => {
+            if (ref) observer.observe(ref);
+        });
+        return () => {
+            sectionRefs.forEach(ref => {
+                if (ref) observer.unobserve(ref);
+            });
+            observer.disconnect();
+        };
+    }, [productos, active]);
 
     const handleClick = (key: string) => {
         setActive(key);
