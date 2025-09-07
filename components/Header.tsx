@@ -31,6 +31,7 @@ export default function Header() {
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    document.cookie = `i18next=${lng}; path=/`;
   };
 
   useEffect(() => {

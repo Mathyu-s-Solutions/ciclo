@@ -1,5 +1,12 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+function getCookie(name) {
+    if (typeof document === 'undefined') return null;
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
 
 import esCommon from '../public/locales/es/common.json';
 import enCommon from '../public/locales/en/common.json';
@@ -14,10 +21,13 @@ import enServicios from '../public/locales/en/servicios.json';
 import esNosotros from '../public/locales/es/nosotros.json';
 import enNosotros from '../public/locales/en/nosotros.json';
 
+
+const cookieLang = getCookie('i18next') || 'es';
+
 i18n
     .use(initReactI18next)
     .init({
-        lng: 'es',
+        lng: cookieLang,
         fallbackLng: 'es',
         debug: false,
         resources: {
@@ -44,5 +54,4 @@ i18n
             escapeValue: false,
         },
     });
-
 export default i18n;
