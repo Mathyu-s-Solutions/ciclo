@@ -1,9 +1,11 @@
-"use client"
 
-import { useRef, useState, useEffect } from "react";
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import type { RefObject } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import '../../styles/spin-variable.css';
 
 interface Producto {
@@ -13,26 +15,27 @@ interface Producto {
 }
 
 export default function ProductosPage() {
+    const { t } = useTranslation("productos");
     const router = useRouter();
     const productos: Producto[] = [
         {
             key: "agregados",
-            label: "Agregados Reciclados",
+            label: t("agregados.titulo"),
             ref: useRef<HTMLDivElement>(null),
         },
         {
             key: "adoquines",
-            label: "Adoquines",
+            label: t("adoquines.titulo"),
             ref: useRef<HTMLDivElement>(null),
         },
         {
             key: "ladrillos",
-            label: "Ladrillos",
+            label: t("ladrillos.titulo"),
             ref: useRef<HTMLDivElement>(null),
         },
         {
             key: "separadores",
-            label: "Separadores de Concreto",
+            label: t("separadores.titulo"),
             ref: useRef<HTMLDivElement>(null),
         },
     ];
@@ -79,7 +82,7 @@ export default function ProductosPage() {
         <>
             <main className="max-w-6xl mx-auto px-4 py-12">
                 <h1 className="mb-8 max-w-full text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8">
-                    Conoce nuestros productos
+                    {t('titulo')}
                 </h1>
                 <div className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10 bg-[#F2F2F2]">
                     {productos.map((p) => (
@@ -93,93 +96,97 @@ export default function ProductosPage() {
                     ))}
                 </div>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
+                    {/* Agregados Reciclados */}
                     <div ref={productos[0].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
                                     <div className="absolute top-0 left-1/2 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, -50%)' }}></div>
                                 </div>
-                                <Image src="/pages/productos/agregados.png" alt="Servicio 1" width={220} height={220} className="object-contain" />
+                                <Image src="/pages/productos/agregados.png" alt={t('agregados.titulo')} width={220} height={220} className="object-contain" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
-                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">Agregados Reciclados</h4>
-                            <p className="mb-2">Descriptivo</p>
-                            <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
-                            <p className="mb-2">Permisos y autorizaciones</p>
-                            <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('agregados.titulo')}</h4>
+                            <p className="mb-2">{t('agregados.descripcion')}</p>
+                            <p className="mb-4">{t('agregados.body')}</p>
+                            <p className="mb-2">{t('agregados.permisos')}</p>
+                            <p className="mb-2">{t('agregados.body2')}</p>
                             <div className="mt-6">
                                 <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer">
-                                    Ficha Técnica
+                                    {t('agregados.ficha')}
                                     <span className="text-lg">↓</span>
                                 </button>
                             </div>
                         </div>
                     </div>
+                    {/* Adoquines */}
                     <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
                                     <div className="absolute top-1/2 right-0 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(50%, -50%)' }}></div>
                                 </div>
-                                <Image src="/pages/productos/adoquin.png" alt="Servicio 2" width={220} height={220} className="object-contain" />
+                                <Image src="/pages/productos/adoquin.png" alt={t('adoquines.titulo')} width={220} height={220} className="object-contain" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
-                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">Adoquines</h4>
-                            <p className="mb-2">Medios digitales - Plataforma Recylink</p>
-                            <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
-                            <p className="mb-2">Beneficios Ambientales</p>
-                            <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('adoquines.titulo')}</h4>
+                            <p className="mb-2">{t('adoquines.descripcion')}</p>
+                            <p className="mb-4">{t('adoquines.body')}</p>
+                            <p className="mb-2">{t('adoquines.beneficios')}</p>
+                            <p className="mb-2">{t('adoquines.body2')}</p>
                             <div className="mt-6">
                                 <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
-                                    Ficha Técnica
+                                    {t('adoquines.ficha')}
                                     <span className="text-lg">↓</span>
                                 </button>
                             </div>
                         </div>
                     </div>
+                    {/* Ladrillos */}
                     <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
                                     <div className="absolute bottom-0 left-1/2 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, 50%)' }}></div>
                                 </div>
-                                <Image src="/pages/productos/ladrillo.png" alt="Servicio 3" width={220} height={220} className="object-contain" />
+                                <Image src="/pages/productos/ladrillo.png" alt={t('ladrillos.titulo')} width={220} height={220} className="object-contain" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
-                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">Ladrillos</h4>
-                            <p className="mb-2">Descripción adicional</p>
-                            <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
-                            <p className="mb-2">Más beneficios</p>
-                            <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('ladrillos.titulo')}</h4>
+                            <p className="mb-2">{t('ladrillos.descripcion')}</p>
+                            <p className="mb-4">{t('ladrillos.body')}</p>
+                            <p className="mb-2">{t('ladrillos.beneficios')}</p>
+                            <p className="mb-2">{t('ladrillos.body2')}</p>
                             <div className="mt-6">
                                 <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
-                                    Ficha Técnica
+                                    {t('ladrillos.ficha')}
                                     <span className="text-lg">↓</span>
                                 </button>
                             </div>
                         </div>
                     </div>
+                    {/* Separadores de Concreto */}
                     <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
                                     <div className="absolute top-1/2 left-0 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, -50%)' }}></div>
                                 </div>
-                                <Image src="/pages/productos/separadores.png" alt="Servicio 4" width={220} height={220} className="object-contain" />
+                                <Image src="/pages/productos/separadores.png" alt={t('separadores.titulo')} width={220} height={220} className="object-contain" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
-                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">Separadores de Concreto</h4>
-                            <p className="mb-2">Título adicional</p>
-                            <p className="mb-4">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
-                            <p className="mb-2">Beneficio extra</p>
-                            <p className="mb-2">Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:</p>
+                            <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('separadores.titulo')}</h4>
+                            <p className="mb-2">{t('separadores.descripcion')}</p>
+                            <p className="mb-4">{t('separadores.body')}</p>
+                            <p className="mb-2">{t('separadores.beneficios')}</p>
+                            <p className="mb-2">{t('separadores.body2')}</p>
                             <div className="mt-6">
                                 <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
-                                    Ficha Técnica
+                                    {t('separadores.ficha')}
                                     <span className="text-lg">↓</span>
                                 </button>
                             </div>
@@ -190,15 +197,15 @@ export default function ProductosPage() {
             <section className="relative bg-[#52B2EB] py-40 mt-20">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
                     <div className="w-full md:w-2/3 text-left">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">¿No encontraste lo que buscabas?</h1>
-                        <h1 className="text-xl sm:text-3xl mb-8">Contáctanos y desarrollaremos una solución a la medida de tus necesidades.</h1>
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">{t('cta.titulo')}</h1>
+                        <h1 className="text-xl sm:text-3xl mb-8">{t('cta.descripcion')}</h1>
                     </div>
                     <div className="w-full md:w-1/3 flex md:justify-end justify-center">
                         <button
                             className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200 cursor-pointer"
                             onClick={() => router.push('/contacto')}
                         >
-                            Contáctanos
+                            {t('cta.boton')}
                         </button>
                     </div>
                 </div>
