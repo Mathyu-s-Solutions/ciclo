@@ -1,0 +1,36 @@
+{
+    "titulo": "Aprende más de nuestros servicios",
+    "servicio1": {
+        "subtitulo": "Subtitulo 1",
+        "descripcion": "Descriptivo",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "permisos": "Permisos y autorizaciones",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+    },
+    "servicio2": {
+        "subtitulo": "Subtitulo 2",
+        "descripcion": "Medios digitales - Plataforma Recylink",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Beneficios Ambientales",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+    },
+    "servicio3": {
+        "subtitulo": "Subtitulo 3",
+        "descripcion": "Descripción adicional",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Más beneficios",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+    },
+    "servicio4": {
+        "subtitulo": "Subtitulo 4",
+        "descripcion": "Título adicional",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Beneficio extra",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+    },
+    "cta": {
+        "titulo": "¿Quieres ser parte del cambio?",
+        "descripcion": "Juntos dejaremos una huella positiva a las futuras generaciones.",
+        "boton": "Únete a nosotros >"
+    }
+}

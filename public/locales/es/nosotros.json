@@ -1,0 +1,43 @@
+{
+    "titulo": "Lo que nos mueve",
+    "intro": "Desde 2015 trabajamos para reducir el impacto ambiental de la construcción, inspirados en la economía circular. Tras 4 años de investigación, en 2020 iniciamos operaciones y hoy más de 100 empresas han mejorado su sostenibilidad con nuestros eco materiales.",
+    "mision": {
+        "titulo": "Misión",
+        "descripcion": "Brindar al mercado de la construcción soluciones sostenibles y eficientes en la gestión de residuos y la provisión de eco materiales."
+    },
+    "vision": {
+        "titulo": "Visión",
+        "descripcion": "Ser una empresa líder en la innovación de servicios y productos eco amigables para el sector construcción, reduciendo su impacto negativo al medio ambiente."
+    },
+    "proposito": {
+        "titulo": "Propósito",
+        "descripcion": "Ser un agente de cambio para descarbonizar la industria de la construcción."
+    },
+    "aliados_titulo": "Nuestros Aliados Estratégicos",
+    "aliados": [
+        {
+            "titulo": "EPD - International EPD System",
+            "descripcion": "Sistema internacional para la certificación ambiental de productos.",
+            "img": "/pages/nosotros/EPD.png"
+        },
+        {
+            "titulo": "UTEC - Universidad de Ingeniería y Tecnología",
+            "descripcion": "Universidad líder en ingeniería y tecnología.",
+            "img": "/pages/nosotros/UTEC.png"
+        },
+        {
+            "titulo": "Perú GBC - Perú Green Building Council",
+            "descripcion": "Iniciativa para promover la construcción sostenible.",
+            "img": "/pages/nosotros/PGBC.png"
+        }
+    ],
+    "politicas_titulo": "Políticas Corporativas",
+    "politicas_intro": "Accede a nuestras políticas y lineamientos que reflejan nuestro compromiso con la sostenibilidad, ética y seguridad.",
+    "politicas": [
+        "Política de Negativa al Trabajo Inseguro",
+        "Política SIG",
+        "Política de Inclusión Laboral",
+        "Política de Fatiga y Somnolencia",
+        "Alcance del Sistema Integrado de Gestión"
+    ]
+}

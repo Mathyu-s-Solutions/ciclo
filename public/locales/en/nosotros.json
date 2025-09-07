@@ -1,0 +1,43 @@
+{
+    "titulo": "What Drives Us",
+    "intro": "Since 2015, we have worked to reduce the environmental impact of construction, inspired by the circular economy. After 4 years of research, we started operations in 2020 and today more than 100 companies have improved their sustainability with our eco materials.",
+    "mision": {
+        "titulo": "Mission",
+        "descripcion": "Provide the construction market with sustainable and efficient solutions for waste management and the supply of eco materials."
+    },
+    "vision": {
+        "titulo": "Vision",
+        "descripcion": "To be a leading company in the innovation of eco-friendly services and products for the construction sector, reducing its negative impact on the environment."
+    },
+    "proposito": {
+        "titulo": "Purpose",
+        "descripcion": "To be an agent of change to decarbonize the construction industry."
+    },
+    "aliados_titulo": "Our Strategic Allies",
+    "aliados": [
+        {
+            "titulo": "EPD - International EPD System",
+            "descripcion": "International system for environmental product certification.",
+            "img": "/pages/nosotros/EPD.png"
+        },
+        {
+            "titulo": "UTEC - University of Engineering and Technology",
+            "descripcion": "Leading university in engineering and technology.",
+            "img": "/pages/nosotros/UTEC.png"
+        },
+        {
+            "titulo": "Peru GBC - Peru Green Building Council",
+            "descripcion": "Initiative to promote sustainable construction.",
+            "img": "/pages/nosotros/PGBC.png"
+        }
+    ],
+    "politicas_titulo": "Corporate Policies",
+    "politicas_intro": "Access our policies and guidelines that reflect our commitment to sustainability, ethics, and safety.",
+    "politicas": [
+        "Unsafe Work Refusal Policy",
+        "SIG Policy",
+        "Labor Inclusion Policy",
+        "Fatigue and Drowsiness Policy",
+        "Scope of the Integrated Management System"
+    ]
+}

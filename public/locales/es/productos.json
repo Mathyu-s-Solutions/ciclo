@@ -1,0 +1,40 @@
+{
+    "titulo": "Conoce nuestros productos",
+    "agregados": {
+        "titulo": "Agregados Reciclados",
+        "descripcion": "Descriptivo",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "permisos": "Permisos y autorizaciones",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Ficha Técnica"
+    },
+    "adoquines": {
+        "titulo": "Adoquines",
+        "descripcion": "Medios digitales - Plataforma Recylink",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Beneficios Ambientales",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Ficha Técnica"
+    },
+    "ladrillos": {
+        "titulo": "Ladrillos",
+        "descripcion": "Descripción adicional",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Más beneficios",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Ficha Técnica"
+    },
+    "separadores": {
+        "titulo": "Separadores de Concreto",
+        "descripcion": "Título adicional",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Beneficio extra",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Ficha Técnica"
+    },
+    "cta": {
+        "titulo": "¿No encontraste lo que buscabas?",
+        "descripcion": "Contáctanos y desarrollaremos una solución a la medida de tus necesidades.",
+        "boton": "Contáctanos"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "titulo": "Get in Touch",
+    "subtitulo": "We would love to hear from you!",
+    "descripcion": "If you have any questions or just want to say hello, use the contact form.",
+    "nombre": "Name",
+    "email": "Email",
+    "asunto": "Subject",
+    "mensaje": "Message",
+    "placeholder": "Type here ...",
+    "enviar": "Send",
+    "novedades": "News...",
+    "validacion": {
+        "nombre": "Name is required.",
+        "email": "Email is required.",
+        "email_invalido": "Invalid email.",
+        "asunto": "Subject is required.",
+        "mensaje": "Message is required.",
+        "mensaje_min": "Message must be at least 10 characters."
+    },
+    "exito": "Form sent successfully"
+}

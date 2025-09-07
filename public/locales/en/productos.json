@@ -1,0 +1,40 @@
+{
+    "titulo": "Discover our products",
+    "agregados": {
+        "titulo": "Recycled Aggregates",
+        "descripcion": "Descriptive",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "permisos": "Permissions and authorizations",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Technical Sheet"
+    },
+    "adoquines": {
+        "titulo": "Pavers",
+        "descripcion": "Digital media - Recylink Platform",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Environmental Benefits",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Technical Sheet"
+    },
+    "ladrillos": {
+        "titulo": "Bricks",
+        "descripcion": "Additional description",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "More benefits",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Technical Sheet"
+    },
+    "separadores": {
+        "titulo": "Concrete Separators",
+        "descripcion": "Additional title",
+        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "beneficios": "Extra benefit",
+        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "ficha": "Technical Sheet"
+    },
+    "cta": {
+        "titulo": "Didn't find what you were looking for?",
+        "descripcion": "Contact us and we will develop a solution tailored to your needs.",
+        "boton": "Contact us"
+    }
+}
