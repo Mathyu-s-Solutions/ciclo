@@ -5,10 +5,17 @@
         "boton": "Contáctanos"
     },
     "productos_titulo": "Productos",
+    "servicios_titulo": "Servicios",
     "productos": {
         "agregados": "Agregados\nReciclados",
         "adoquines": "Adoquines",
         "ladrillos": "Ladrillos",
         "separadores": "Separadores\nde Concreto"
+    },
+    "servicios": {
+        "card1_titulo": "Gestión Integral y Reciclaje RCD",
+        "card1_desc": "De tus residuos a insumos para un futuro circular.",
+        "card2_titulo": "Proyectos de Valorización de Residuos Industriales",
+        "card2_desc": "De tus residuos a insumos para un futuro circular."
     }
 }
