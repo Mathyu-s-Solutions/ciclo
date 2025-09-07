@@ -2,11 +2,16 @@
 
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t, i18n } = useTranslation("common");
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const langBtnRef = useRef<HTMLButtonElement | null>(null);
+  const [menuPos, setMenuPos] = useState<{ top: number, left: number } | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [highlightStyle, setHighlightStyle] = useState<{ left: number; width: number } | null>(null);
   const navRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -24,6 +29,10 @@ export default function Header() {
     isActive: item.href !== "#" && currentPath === item.href
   }));
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   useEffect(() => {
     const idx = hoveredIndex !== null ? hoveredIndex : navigationItems.findIndex(i => i.isActive);
     const el = navRefs.current[idx];
@@ -39,7 +48,7 @@ export default function Header() {
     } else {
       setHighlightStyle(null);
     }
-  }, [hoveredIndex, currentPath]);
+  }, [hoveredIndex, currentPath, i18n.language]);
 
   return (
     <nav className="relative z-10 border-b border-gray-100">
@@ -83,25 +92,60 @@ export default function Header() {
                   }
                   style={{}}
                 >
-                  {item.name}
+                  {t(item.name)}
                 </a>
               ))}
 
-              <div className="group flex items-center space-x-1 ml-6 px-3 py-2 rounded-full transition-all duration-200 cursor-pointer relative z-10">
-                <span className="text-[#1F1B3B] text-sm font-medium">Es</span>
-                <svg
-                  className="w-4 h-4 text-[#1F1B3B] transition-transform duration-200 group-hover:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className="relative group flex-shrink-0 items-center space-x-1 ml-6 px-3 py-2 rounded-full transition-all duration-200 cursor-pointer z-10" style={{ minWidth: '56px' }}>
+                <button
+                  ref={langBtnRef}
+                  className="text-[#1F1B3B] text-sm font-medium focus:outline-none flex items-center"
+                  aria-label="Cambiar idioma"
+                  onClick={() => {
+                    if (!isMenuOpen && langBtnRef.current) {
+                      const rect = langBtnRef.current.getBoundingClientRect();
+                      setMenuPos({
+                        top: rect.bottom + window.scrollY,
+                        left: rect.left + window.scrollX
+                      });
+                    }
+                    setIsMenuOpen(prev => !prev);
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                  {(i18n.language ? i18n.language : 'es').toUpperCase()}
+                  <svg
+                    className={`w-4 h-4 text-[#1F1B3B] ml-1 transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {isMenuOpen && typeof window !== 'undefined' && menuPos && createPortal(
+                  <div style={{ position: 'absolute', top: menuPos.top, left: menuPos.left, minWidth: '56px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '0.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', zIndex: 9999 }}>
+                    {i18n.language === 'es' ? (
+                      <button
+                        className="block w-full text-left px-4 py-2 text-[#1F1B3B] hover:bg-gray-100"
+                        onClick={() => { changeLanguage('en'); setIsMenuOpen(false); }}
+                      >
+                        EN
+                      </button>
+                    ) : (
+                      <button
+                        className="block w-full text-left px-4 py-2 text-[#1F1B3B] hover:bg-gray-100"
+                        onClick={() => { changeLanguage('es'); setIsMenuOpen(false); }}
+                      >
+                        ES
+                      </button>
+                    )}
+                  </div>, document.body
+                )}
               </div>
             </div>
           </div>
@@ -150,11 +194,17 @@ export default function Header() {
                       : "text-[#1F1B3B] block px-4 py-3 rounded-lg text-base md:text-sm lg:text-sm font-medium transition-all duration-200 hover:text-[#1F1B3B] hover:bg-gray-50"
                   }
                 >
-                  {item.name}
+                  {t(item.name)}
                 </a>
               ))}
               <div className="flex items-center space-x-2 px-4 py-3 hover:bg-gray-50 rounded-lg transition-all duration-200">
-                <span className="text-[#1F1B3B] text-base font-medium">Es</span>
+                <button
+                  className="text-[#1F1B3B] text-base font-medium focus:outline-none"
+                  onClick={() => changeLanguage(i18n.language === "es" ? "en" : "es")}
+                  aria-label="Cambiar idioma"
+                >
+                  {(i18n.language ? i18n.language : 'es').toUpperCase()}
+                </button>
                 <svg
                   className="w-4 h-4 text-[#1F1B3B]"
                   fill="none"

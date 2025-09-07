@@ -1,0 +1,21 @@
+{
+    "titulo": "Ponte en Contacto",
+    "subtitulo": "Nos gustaría saber de ti !",
+    "descripcion": "Si tiene alguna consulta o simplemente quiere saludarnos, utilice el formulario de contacto.",
+    "nombre": "Nombre",
+    "email": "Email",
+    "asunto": "Asunto",
+    "mensaje": "Mensaje",
+    "placeholder": "Escriba aquí ...",
+    "enviar": "Enviar",
+    "novedades": "Novedades...",
+    "validacion": {
+        "nombre": "El nombre es obligatorio.",
+        "email": "El email es obligatorio.",
+        "email_invalido": "Email inválido.",
+        "asunto": "El asunto es obligatorio.",
+        "mensaje": "El mensaje es obligatorio.",
+        "mensaje_min": "El mensaje debe tener al menos 10 caracteres."
+    },
+    "exito": "Formulario enviado correctamente"
+}

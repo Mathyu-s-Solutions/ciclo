@@ -1,0 +1,17 @@
+{
+	"titulo": "About Us",
+	"descripcion": "We are a company committed to sustainability and innovation.",
+	"mision": "Mission",
+	"mision_texto": "Our mission is to create sustainable solutions for the future.",
+	"vision": "Vision",
+	"vision_texto": "To be leaders in the circular economy and environmental responsibility.",
+	"valores": "Values",
+	"valores_lista": [
+		"Commitment",
+		"Innovation",
+		"Sustainability",
+		"Transparency"
+	],
+	"aliados": "Allies",
+	"equipo": "Team"
+}
