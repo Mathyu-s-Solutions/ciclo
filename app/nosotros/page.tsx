@@ -2,25 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function NosotrosPage() {
-    const aliados = [
-        {
-            titulo: "EPD - International EPD System",
-            descripcion: "Sistema internacional para la certificación ambiental de productos.",
-            img: "/pages/nosotros/EPD.png",
-        },
-        {
-            titulo: "UTEC - Universidad de Ingeniería y Tecnología",
-            descripcion: "Universidad líder en ingeniería y tecnología.",
-            img: "/pages/nosotros/UTEC.png",
-        },
-        {
-            titulo: "Perú GBC - Perú Green Building Council",
-            descripcion: "Iniciativa para promover la construcción sostenible.",
-            img: "/pages/nosotros/PGBC.png",
-        },
-    ];
+    const { t } = useTranslation("nosotros");
+    const aliados = Object.values(t('aliados', { returnObjects: true })) as Array<{ titulo: string; descripcion: string; img: string }>;
     const [index, setIndex] = useState(0);
     const [isFading, setIsFading] = useState(false);
 
@@ -37,12 +23,12 @@ export default function NosotrosPage() {
         <>
             <main className="max-w-6xl mx-auto px-4 py-12 overflow-x-hidden">
                 <h1 className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8 mb-20">
-                    Lo que nos mueve
+                    {t('titulo')}
                 </h1>
                 <div className="flex flex-col md:flex-row items-center gap-8 mb-20 px-4 sm:px-6 lg:px-8 relative  md:translate-x-20" style={{ minHeight: '260px' }}>
                     <div className="w-full md:w-1/2 flex justify-center md:justify-end z-20 ">
                         <p className="bg-white rounded-lg shadow-lg p-6 text-[#1F1B3B] text-base sm:text-xl font-poppins max-w-md" style={{ boxShadow: '4px 4px 6px #B3B3B3' }}>
-                            Desde 2015 trabajamos para reducir el impacto ambiental de la construcción, inspirados en la economía circular. Tras 4 años de investigación, en 2020 iniciamos operaciones y hoy más de 100 empresas han mejorado su sostenibilidad con nuestros eco materiales.
+                            {t('intro')}
                         </p>
                     </div>
                     <div className="w-full md:w-1/2 flex justify-center md:justify-start z-10 md:-translate-x-20 -translate-y-15">
@@ -60,9 +46,9 @@ export default function NosotrosPage() {
                                 <circle cx="24" cy="24" r="20" strokeWidth="2" />
                                 <path d="M24 14v10l7 7" strokeWidth="2" />
                             </svg>
-                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">Misión</h4>
+                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">{t('mision.titulo')}</h4>
                         </div>
-                        <p className="text-[#1F1B3B] text-base text-left">Brindar al mercado de la construcción soluciones sostenibles y eficientes en la gestión de residuos y la provisión de eco materiales.</p>
+                        <p className="text-[#1F1B3B] text-base text-left">{t('mision.descripcion')}</p>
                     </div>
                     <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-poppins transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
@@ -71,9 +57,9 @@ export default function NosotrosPage() {
                                 <circle cx="24" cy="24" r="3" strokeWidth="2" />
                                 <path d="M12 24c2-4 8-8 12-8s10 4 12 8" strokeWidth="2" />
                             </svg>
-                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">Visión</h4>
+                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">{t('vision.titulo')}</h4>
                         </div>
-                        <p className="text-[#1F1B3B] text-base text-left">Ser una empresa líder en la innovación de servicios y productos eco amigables para el sector construcción, reduciendo su impacto negativo al medio ambiente.</p>
+                        <p className="text-[#1F1B3B] text-base text-left">{t('vision.descripcion')}</p>
                     </div>
                     <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-poppins transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
@@ -81,15 +67,15 @@ export default function NosotrosPage() {
                                 <path d="M24 8v32M16 24h16" strokeWidth="2" />
                                 <circle cx="24" cy="24" r="20" strokeWidth="2" />
                             </svg>
-                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">Propósito</h4>
+                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">{t('proposito.titulo')}</h4>
                         </div>
-                        <p className="text-[#1F1B3B] text-base text-left">Ser un agente de cambio para descarbonizar la industria de la construcción.</p>
+                        <p className="text-[#1F1B3B] text-base text-left">{t('proposito.descripcion')}</p>
                     </div>
                 </div>
             </section>
             <section className="max-w-6xl mx-auto px-4 py-12 my-8 md:my-20">
                 <h1 className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8 mb-20">
-                    Nuestros Aliados Estratégicos
+                    {t('aliados_titulo')}
                 </h1>
                 <div className="flex flex-col md:flex-row items-center gap-8 px-4 sm:px-6 lg:px-8">
                     <div className="w-full md:w-1/2 flex flex-col justify-between items-start min-h-[180px] h-[220px]">
@@ -139,49 +125,32 @@ export default function NosotrosPage() {
             </section>
             <section className="max-w-6xl mx-auto px-4 py-12">
                 <h1 className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8 mb-10">
-                    Políticas Corporativas
+                    {t('politicas_titulo')}
                 </h1>
                 <p className="mb-10  text-[#1F1B3B] px-4 sm:px-6 lg:px-8 max-w-3xl mb-20">
-                    Accede a nuestras políticas y lineamientos que reflejan nuestro compromiso con la sostenibilidad, ética y seguridad.
+                    {t('politicas_intro')}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 px-4 sm:px-6 lg:px-8">
-                    <div className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                        <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-                            <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
-                        </svg>
-                        <span className="text-base font-medium text-[#1F1B3B]">Política de Negativa al Trabajo Inseguro</span>
-                    </div>
-                    <div className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                        <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-                            <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
-                        </svg>
-                        <span className="text-base font-medium text-[#1F1B3B]">Política SIG</span>
-                    </div>
-                    <div className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                        <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-                            <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
-                        </svg>
-                        <span className="text-base font-medium text-[#1F1B3B]">Política de Inclusión Laboral</span>
-                    </div>
+                    {Object.values(t('politicas', { returnObjects: true })).slice(0, 3).map((pol: string, i: number) => (
+                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                            <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
+                                <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
+                            </svg>
+                            <span className="text-base font-medium text-[#1F1B3B]">{pol}</span>
+                        </div>
+                    ))}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 px-4 sm:px-6 lg:px-8">
-                    <div className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                        <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-                            <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
-                        </svg>
-                        <span className="text-base font-medium text-[#1F1B3B]">Política de Fatiga y Somnolencia</span>
-                    </div>
-                    <div className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                        <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-                            <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
-                        </svg>
-                        <span className="text-base font-medium text-[#1F1B3B]">Alcance del Sistema Integrado de Gestión</span>
-                    </div>
+                    {Object.values(t('politicas', { returnObjects: true })).slice(3).map((pol: string, i: number) => (
+                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                            <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
+                                <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
+                            </svg>
+                            <span className="text-base font-medium text-[#1F1B3B]">{pol}</span>
+                        </div>
+                    ))}
                 </div>
             </section>
         </>
