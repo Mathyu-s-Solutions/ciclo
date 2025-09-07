@@ -15,7 +15,6 @@ export default function ServiciosPage() {
                     {t('titulo')}
                 </h1>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
-                    {/* Servicio 1 */}
                     <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                         <div className="w-full md:w-1/2">
                             <h2 className="text-base sm:text-xl lg:text-2xl text-left mb-4">{t('servicio1.subtitulo')}</h2>
@@ -28,7 +27,6 @@ export default function ServiciosPage() {
                             <Image src="/pages/servicios/5-Servicios.webp" alt="Servicio 1" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                         </div>
                     </div>
-                    {/* Servicio 2 */}
                     <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                         <div className="flex flex-col md:flex-row items-center gap-8">
                             <div className="w-full md:w-1/2">
@@ -43,7 +41,6 @@ export default function ServiciosPage() {
                             </div>
                         </div>
                     </div>
-                    {/* Servicio 3 */}
                     <div className="flex flex-col md:flex-row items-center gap-8">
                         <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                             <div className="w-full md:w-1/2">
@@ -58,7 +55,6 @@ export default function ServiciosPage() {
                             </div>
                         </div>
                     </div>
-                    {/* Servicio 4 */}
                     <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                         <div className="flex flex-col md:flex-row items-center gap-8">
                             <div className="w-full md:w-1/2">

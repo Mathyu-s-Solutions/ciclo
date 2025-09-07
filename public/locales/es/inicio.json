@@ -1,0 +1,14 @@
+{
+    "cta": {
+        "titulo": "Transformar para inspirar",
+        "descripcion": "Súmate al movimiento circular, contáctanos para explicarte cómo puedes descarbonizar tus operaciones.",
+        "boton": "Contáctanos"
+    },
+    "productos_titulo": "Productos",
+    "productos": {
+        "agregados": "Agregados\nReciclados",
+        "adoquines": "Adoquines",
+        "ladrillos": "Ladrillos",
+        "separadores": "Separadores\nde Concreto"
+    }
+}

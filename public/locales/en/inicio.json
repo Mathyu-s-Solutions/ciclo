@@ -1,0 +1,14 @@
+{
+    "cta": {
+        "titulo": "Transform to inspire",
+        "descripcion": "Join the circular movement, contact us to learn how you can decarbonize your operations.",
+        "boton": "Contact us"
+    },
+    "productos_titulo": "Products",
+    "productos": {
+        "agregados": "Recycled\nAggregates",
+        "adoquines": "Pavers",
+        "ladrillos": "Bricks",
+        "separadores": "Concrete\nSeparators"
+    }
+}
