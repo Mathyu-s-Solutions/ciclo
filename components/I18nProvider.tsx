@@ -16,8 +16,8 @@ export default function I18nProvider({ children }: { children: React.ReactNode }
 
     if (!ready) {
         return (
-            <div style={{ width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F2F2F2' }}>
-                <img src="/img/ciclo-logo.png" alt="Ciclo Logo" style={{ height: 80, width: 'auto' }} />
+                <div className="w-screen h-screen flex items-center justify-center bg-[#F2F2F2]">
+                    <img src="/img/ciclo-logo.png" alt="Ciclo Logo" className="h-20 w-auto" />
             </div>
         );
     }
