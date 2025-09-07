@@ -1,4 +1,21 @@
 {
+    "footer": {
+        "descripcion": "A collection of components for your startup business or side project.",
+        "servicios": "Services",
+        "servicios_gestion": "Comprehensive Management",
+        "servicios_reciclaje": "RCD Recycling",
+        "servicios_valorizacion": "Valorization Projects",
+        "productos": "Products",
+        "productos_ecoadoquines": "Eco-pavers",
+        "productos_bloques": "Blocks",
+        "productos_agregados": "Recycled Aggregates",
+        "contacto": "Contact",
+        "direccion": "Av. Santa Rosa Parcela P-48,\nSanta Rosa de Collanac,\nCieneguilla, Lima.",
+        "telefono": "+51 901 211 995",
+        "email": "ventas@ciclo.com.pe",
+        "copyright": "© 2025 Ciclo.com. All rights reserved.",
+        "terminos": "Terms and Conditions"
+    },
     "Inicio": "Home",
     "Nosotros": "About Us",
     "Servicios": "Services",
