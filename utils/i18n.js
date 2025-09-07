@@ -7,6 +7,8 @@ import esContacto from '../public/locales/es/contacto.json';
 import enContacto from '../public/locales/en/contacto.json';
 import esProductos from '../public/locales/es/productos.json';
 import enProductos from '../public/locales/en/productos.json';
+import esPlanta from '../public/locales/es/planta.json';
+import enPlanta from '../public/locales/en/planta.json';
 
 i18n
     .use(initReactI18next)
@@ -19,14 +21,16 @@ i18n
                 common: esCommon,
                 contacto: esContacto,
                 productos: esProductos,
+                planta: esPlanta,
             },
             en: {
                 common: enCommon,
                 contacto: enContacto,
                 productos: enProductos,
+                planta: enPlanta,
             },
         },
-        ns: ['common', 'contacto', 'productos'],
+        ns: ['common', 'contacto', 'productos', 'planta'],
         defaultNS: 'common',
         interpolation: {
             escapeValue: false,
