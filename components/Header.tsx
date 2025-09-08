@@ -18,7 +18,7 @@ export default function Header() {
 
   const currentPath = usePathname();
   const navigationItems = [
-    { name: "Inicio", href: "/" },
+    { name: "Inicio", href: "/inicio" },
     { name: "Nosotros", href: "/nosotros" },
     { name: "Servicios", href: "/servicios" },
     { name: "Planta", href: "/planta" },

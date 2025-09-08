@@ -20,6 +20,8 @@ import esServicios from '../public/locales/es/servicios.json';
 import enServicios from '../public/locales/en/servicios.json';
 import esNosotros from '../public/locales/es/nosotros.json';
 import enNosotros from '../public/locales/en/nosotros.json';
+import esInicio from '../public/locales/es/inicio.json';
+import enInicio from '../public/locales/en/inicio.json';
 
 
 const cookieLang = getCookie('i18next') || 'es';
@@ -38,6 +40,7 @@ i18n
                 planta: esPlanta,
                 servicios: esServicios,
                 nosotros: esNosotros,
+                inicio: esInicio,
             },
             en: {
                 common: enCommon,
@@ -46,9 +49,10 @@ i18n
                 planta: enPlanta,
                 servicios: enServicios,
                 nosotros: enNosotros,
+                inicio: enInicio,
             },
         },
-        ns: ['common', 'contacto', 'productos', 'planta', 'servicios', 'nosotros'],
+        ns: ['common', 'contacto', 'productos', 'planta', 'servicios', 'nosotros', 'inicio'],
         defaultNS: 'common',
         interpolation: {
             escapeValue: false,
