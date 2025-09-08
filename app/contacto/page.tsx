@@ -45,7 +45,7 @@ export default function ContactoPage() {
     }
 
     return (
-        <main className="max-w-6xl mx-auto px-4 py-12">
+    <main className="max-w-6xl mx-auto px-4 py-12 font-bricolage">
             <div className="flex flex-col md:flex-row items-start gap-8">
                 <div className="flex flex-col w-full md:w-2/3">
                     <div className="px-4 sm:px-6 lg:px-8">
@@ -59,7 +59,7 @@ export default function ContactoPage() {
                             {t('descripcion')}
                         </p>
                         <div className="bg-white rounded-lg p-8 w-full max-w-md shadow flex flex-col gap-4 mb-20 md:mb-30">
-                            <div className="font-poppins flex flex-col gap-4">
+                            <div className="flex flex-col gap-4">
                                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                                     <label className="font-medium text-[#1F1B3B]" htmlFor="nombre">{t('nombre')}</label>
                                     <input

@@ -14,7 +14,7 @@ const Footer = () => {
                     <div className="mb-1">
                         <Image src="/img/ciclo-white.png" alt="Ciclo Logo" width={140} height={45} />
                     </div>
-                    <h3 className="font-poppins font-normal text-base md:text-sm lg:text-sm mb-8 text-[#F2F2F2] max-w-xs md:max-w-sm lg:max-w-md text-left break-words">{t('footer.descripcion')}</h3>
+                    <h3 className="font-bricolage font-normal text-base md:text-sm lg:text-sm mb-8 text-[#F2F2F2] max-w-xs md:max-w-sm lg:max-w-md text-left break-words">{t('footer.descripcion')}</h3>
                     <div className="flex gap-4 text-2xl text-[#4F5BFF]">
                         {/* ...iconos... */}
                         <a href="#" aria-label="YouTube"><svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.108-2.115C19.073 3.5 12 3.5 12 3.5s-7.073 0-9.39.571A2.994 2.994 0 0 0 .502 6.186C0 8.504 0 12 0 12s0 3.496.502 5.814a2.994 2.994 0 0 0 2.108 2.115C4.927 20.5 12 20.5 12 20.5s7.073 0 9.39-.571a2.994 2.994 0 0 0 2.108-2.115C24 15.496 24 12 24 12s0-3.496-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg></a>
@@ -24,24 +24,24 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="min-w-[120px]">
-                    <h3 className="font-poppins font-medium text-lg md:text-xl lg:text-2xl mb-6">{t('footer.servicios')}</h3>
-                    <ul className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
+                    <h3 className="font-bricolage font-medium text-lg md:text-xl lg:text-2xl mb-6">{t('footer.servicios')}</h3>
+                    <ul className="font-bricolage font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
                         <li className="text-base md:text-sm lg:text-sm">{t('footer.servicios_gestion')}</li>
                         <li className="text-base md:text-sm lg:text-sm">{t('footer.servicios_reciclaje')}</li>
                         <li className="text-base md:text-sm lg:text-sm">{t('footer.servicios_valorizacion')}</li>
                     </ul>
                 </div>
                 <div className="min-w-[120px]">
-                    <h3 className="font-poppins font-medium text-lg md:text-xl lg:text-2xl mb-6">{t('footer.productos')}</h3>
-                    <ul className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
+                    <h3 className="font-bricolage font-medium text-lg md:text-xl lg:text-2xl mb-6">{t('footer.productos')}</h3>
+                    <ul className="font-bricolage font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
                         <li className="text-base md:text-sm lg:text-sm">{t('footer.productos_ecoadoquines')}</li>
                         <li className="text-base md:text-sm lg:text-sm">{t('footer.productos_bloques')}</li>
                         <li className="text-base md:text-sm lg:text-sm">{t('footer.productos_agregados')}</li>
                     </ul>
                 </div>
                 <div className="min-w-[150px]">
-                    <h3 className="font-poppins font-medium text-lg md:text-xl lg:text-2xl mb-6">{t('footer.contacto')}</h3>
-                    <ul className="font-poppins font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
+                    <h3 className="font-bricolage font-medium text-lg md:text-xl lg:text-2xl mb-6">{t('footer.contacto')}</h3>
+                    <ul className="font-bricolage font-normal text-sm md:text-sm lg:text-sm space-y-4 text-[#F2F2F2]">
                         <li className="text-base md:text-sm lg:text-sm">
                             {t('footer.direccion').split('\n').map((line, i, arr) => (
                                 <React.Fragment key={i}>
@@ -57,8 +57,8 @@ const Footer = () => {
             </div>
             <div className="border-t border-[#C9A86A] my-6"></div>
             <div className="flex flex-col md:flex-row justify-between text-base md:text-sm lg:text-sm items-center text-[#F2F2F2]/80 w-full">
-                <span className="w-full md:w-auto text-left truncate font-poppins font-medium text-base md:text-sm lg:text-sm">{t('footer.copyright')}</span>
-                <a href="#" className="font-poppins font-medium text-base md:text-sm lg:text-sm text-[#2451D7] hover:underline mt-2 md:mt-0">{t('footer.terminos')}</a>
+                <span className="w-full md:w-auto text-left truncate font-bricolage font-medium text-base md:text-sm lg:text-sm">{t('footer.copyright')}</span>
+                <a href="#" className="font-bricolage font-medium text-base md:text-sm lg:text-sm text-[#2451D7] hover:underline mt-2 md:mt-0">{t('footer.terminos')}</a>
             </div>
         </footer>
     );
