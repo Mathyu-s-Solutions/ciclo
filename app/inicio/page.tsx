@@ -35,6 +35,17 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <section className="relative py-[400px] mt-20">
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/pages/servicios/5-Servicios.webp"
+            alt="Fondo sección"
+            fill
+            style={{ objectFit: 'cover', zIndex: 0 }}
+            priority
+          />
+        </div>
+      </section>
       <section className="w-full flex flex-col py-14 bg-[#F2F2F2]">
         <div className="w-full max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-10 text-[#1F1B3B] text-left">{t('circularidad_titulo')}</h2>

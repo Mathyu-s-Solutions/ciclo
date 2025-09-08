@@ -19,5 +19,9 @@
         "card2_desc": "From your waste to inputs for a circular future."
     },
     "circularidad_titulo": "Circularity building",
-    "circularidad_texto": "We have the first eco material made with recycled aggregates in Latin America to have the EPD eco label"
+    "circularidad_texto": "We have the first eco material made with recycled aggregates in Latin America to have the EPD eco label",
+    "hero_titulo": "Transform to inspire",
+    "hero_texto": "We reduce the environmental impact of companies that generate debris and consume prefabricated construction materials, without reducing quality and without increasing the budget.",
+    "hero_boton": "Discover more",
+    "hero_img_alt": "Construction worker"
 }
