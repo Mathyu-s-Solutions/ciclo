@@ -27,7 +27,7 @@ export default function NosotrosPage() {
                 </h1>
                 <div className="flex flex-col md:flex-row items-center gap-8 mb-20 px-4 sm:px-6 lg:px-8 relative  md:translate-x-20" style={{ minHeight: '260px' }}>
                     <div className="w-full md:w-1/2 flex justify-center md:justify-end z-20 ">
-                        <p className="bg-white rounded-lg shadow-lg p-6 text-[#1F1B3B] text-base sm:text-xl font-poppins max-w-md" style={{ boxShadow: '4px 4px 6px #B3B3B3' }}>
+                        <p className="bg-white rounded-lg shadow-lg p-6 text-[#1F1B3B] text-base sm:text-xl font-bricolage max-w-md" style={{ boxShadow: '4px 4px 6px #B3B3B3' }}>
                             {t('intro')}
                         </p>
                     </div>
@@ -40,7 +40,7 @@ export default function NosotrosPage() {
             </main>
             <section className="relative bg-[#52B2EB] py-20 py-40">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch justify-center md:justify-center gap-20 px-4">
-                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-poppins transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
                             <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <circle cx="24" cy="24" r="20" strokeWidth="2" />
@@ -50,7 +50,7 @@ export default function NosotrosPage() {
                         </div>
                         <p className="text-[#1F1B3B] text-base text-left">{t('mision.descripcion')}</p>
                     </div>
-                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-poppins transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
                             <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <ellipse cx="24" cy="24" rx="16" ry="10" strokeWidth="2" />
@@ -61,7 +61,7 @@ export default function NosotrosPage() {
                         </div>
                         <p className="text-[#1F1B3B] text-base text-left">{t('vision.descripcion')}</p>
                     </div>
-                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-poppins transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
                             <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <path d="M24 8v32M16 24h16" strokeWidth="2" />
@@ -132,7 +132,7 @@ export default function NosotrosPage() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 px-4 sm:px-6 lg:px-8">
                     {Object.values(t('politicas', { returnObjects: true })).slice(0, 3).map((pol: string, i: number) => (
-                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-bricolage shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
                             <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
                                 <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
@@ -143,7 +143,7 @@ export default function NosotrosPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 px-4 sm:px-6 lg:px-8">
                     {Object.values(t('politicas', { returnObjects: true })).slice(3).map((pol: string, i: number) => (
-                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-poppins shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-bricolage shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
                             <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
                                 <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />

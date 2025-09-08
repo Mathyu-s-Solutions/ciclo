@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+.font-bricolage {
+  font-family: 'Bricolage Grotesque', 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
 
 .font-poppins {
   font-family: 'Poppins', sans-serif;
 }
-
-@import "tailwindcss";
 
 :root {
   --background: #F2F2F2;
@@ -21,7 +26,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: 'Bricolage Grotesque', 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,15 +46,15 @@ body {
 
 
 h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 600;
   color: #1F1B3B;
   line-height: 124.5%;
   letter-spacing: 0;
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
   color: #1F1B3B;
   line-height: 140%;
@@ -57,7 +62,7 @@ p {
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
   color: #1F1B3B;
   line-height: 140%;
@@ -65,7 +70,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 400;
   color: #F2F2F2;
   line-height: 140%;
@@ -74,14 +79,14 @@ h3 {
 
 
 h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   color: #2451D7;
   line-height: 140%;
   letter-spacing: 0;
 }
 
 h5 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 800;
   color: #1F1B3B;
   line-height: 124.5%;
