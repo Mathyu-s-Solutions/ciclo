@@ -11,15 +11,23 @@ export default function Home() {
   const { t } = useTranslation("inicio");
 
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [angle, setAngle] = React.useState(0);
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setAngle(a => (a + 1) % 360);
+    }, 16);
+    return () => clearInterval(interval);
+  }, []);
+
   const cards = [
     {
       titulo: t('servicios.card1_titulo'),
-      img: "/globe.svg",
+      img: "/img/Group.svg",
       desc: t('servicios.card1_desc')
     },
     {
       titulo: t('servicios.card2_titulo'),
-      img: "/window.svg",
+      img: "/img/Vector.svg",
       desc: t('servicios.card2_desc')
     }
   ];
@@ -27,6 +35,83 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <section className="w-full flex flex-col py-14 bg-[#F2F2F2]">
+        <div className="w-full max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-10 text-[#1F1B3B] text-left">{t('circularidad_titulo')}</h2>
+          <div className="flex justify-center w-full">
+            <div
+              className="relative flex justify-center items-center"
+              style={{
+                width: 400,
+                height: 800,
+                transform: "rotate(45deg)",
+                transformOrigin: "200px 400px",
+              }}
+            >
+              <svg
+                width="400"
+                height="800"
+                viewBox="0 0 400 800"
+                className="block absolute top-0 left-0"
+                style={{ zIndex: 2 }}
+              >
+                <ellipse cx="200" cy="400" rx="180" ry="380" fill="none" stroke="#2451D7" strokeWidth="3" />
+              </svg>
+              {(() => {
+                const cx = 200, cy = 400, rx = 180, ry = 380;
+                const rad = (angle * Math.PI) / 180;
+                const x = cx + rx * Math.cos(rad);
+                const y = cy + ry * Math.sin(rad);
+                return (
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: `${x - 10}px`,
+                      top: `${y - 10}px`,
+                      width: 20,
+                      height: 20,
+                      background: '#2451D7',
+                      borderRadius: '50%',
+                      zIndex: 10,
+                      boxShadow: '0 2px 8px #2451D7a0',
+                      transition: 'left 0.1s linear, top 0.1s linear',
+                    }}
+                  />
+                );
+              })()}
+              <div
+                className="absolute"
+                style={{
+                  top: '450px',
+                  left: '-250px',
+                  zIndex: 2,
+                  transform: "rotate(-45deg)"
+                }}
+              >
+                <Image src="/pages/inicio/residuos.png" alt={t('circularidad_residuos_alt')} width={200} height={60} />
+              </div>
+              <div
+                className="absolute"
+                style={{
+                  bottom: '450px',
+                  right: '-250px',
+                  zIndex: 2,
+                  transform: "rotate(-45deg)"
+                }}
+              >
+                <Image src="/pages/inicio/materiales.png" alt={t('circularidad_materiales_alt')} width={200} height={60} />
+              </div>
+              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center" style={{ transform: "rotate(-45deg)" }}>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
+                  <p className="text-[#1F1B3B] text-left text-base md:text-lg font-medium max-w-[300px]">
+                    {t('circularidad_texto')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="w-full flex flex-col items-center py-16 bg-[#F2F2F2]">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-20 text-[#1F1B3B]">{t('servicios_titulo')}</h2>
         <div className="w-full max-w-6xl flex items-center justify-center relative h-[400px]">
