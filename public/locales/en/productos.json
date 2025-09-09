@@ -2,34 +2,22 @@
     "titulo": "Discover our products",
     "agregados": {
         "titulo": "Recycled Aggregates",
-        "descripcion": "Descriptive",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "permisos": "Permissions and authorizations",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "Our recycled aggregates are designed for use in non-structural applications. We offer different types according to their particle size distribution.",
         "ficha": "Technical Sheet"
     },
     "adoquines": {
         "titulo": "Pavers",
-        "descripcion": "Digital media - Recylink Platform",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Environmental Benefits",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "We offer the first eco-pavers in Latin America made with recycled aggregates and certified with the EPD eco-label. We manufacture type I, II, and III pavers in various colors.",
         "ficha": "Technical Sheet"
     },
     "ladrillos": {
         "titulo": "Bricks",
-        "descripcion": "Additional description",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "More benefits",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "Our bricks can be used in various non-load-bearing applications. They measure 9 cm wide, 18 cm high, and 39 cm long.",
         "ficha": "Technical Sheet"
     },
     "separadores": {
         "titulo": "Concrete Separators",
-        "descripcion": "Additional title",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Extra benefit",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "The concrete spacers are made with high-strength recycled concrete and incorporate injected nylon hooks, ensuring proper separation between the reinforcing steel and the outer surface of the concrete, complying with the coverage required by technical standard E.060.",
         "ficha": "Technical Sheet"
     },
     "cta": {

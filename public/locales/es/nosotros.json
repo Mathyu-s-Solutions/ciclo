@@ -1,6 +1,5 @@
 {
-    "titulo": "Lo que nos mueve",
-    "intro": "Desde 2015 trabajamos para reducir el impacto ambiental de la construcción, inspirados en la economía circular. Tras 4 años de investigación, en 2020 iniciamos operaciones y hoy más de 100 empresas han mejorado su sostenibilidad con nuestros eco materiales.",
+    "intro": "La construcción es una de las industrias que más impacto tiene en el medio ambiente y la que más residuos genera. Esta problemático nos motivó a fundar CICLO en el año 2015, con la idea de desarrollar materiales sustentables de calidad usando la innovación e investigación como motores principales para viabilizar nuestra visión. Durante 5 años desarrollamos el proyecto y obtuvimos las licencias necesarias para finalmente iniciar operaciones en el año 2020.",
     "mision": {
         "titulo": "Misión",
         "descripcion": "Brindar al mercado de la construcción soluciones sostenibles y eficientes en la gestión de residuos y la provisión de eco materiales."
@@ -17,22 +16,31 @@
     "aliados": [
         {
             "titulo": "EPD - International EPD System",
-            "descripcion": "Sistema internacional para la certificación ambiental de productos.",
             "img": "/pages/nosotros/EPD.png"
         },
         {
             "titulo": "UTEC - Universidad de Ingeniería y Tecnología",
-            "descripcion": "Universidad líder en ingeniería y tecnología.",
             "img": "/pages/nosotros/UTEC.png"
         },
         {
             "titulo": "Perú GBC - Perú Green Building Council",
-            "descripcion": "Iniciativa para promover la construcción sostenible.",
             "img": "/pages/nosotros/PGBC.png"
+        },
+        {
+            "titulo": "CCL - Cámara de Comercio de Lima",
+            "img": "/pages/nosotros/CCL.png"
+        },
+        {
+            "titulo": "IMPAQTO Capital",
+            "img": "/pages/nosotros/IMPAQTO.png"
+        },
+        {
+            "titulo": "SAINT - GOBAIN",
+            "img": "/pages/nosotros/SAINTGOBAIN.webp"
         }
     ],
     "politicas_titulo": "Políticas Corporativas",
-    "politicas_intro": "Accede a nuestras políticas y lineamientos que reflejan nuestro compromiso con la sostenibilidad, ética y seguridad.",
+    "politicas_intro": "Accede a nuestras políticas que forman parte de nuestro Sistema Integrado de Gestión y que reflejan nuestro compromiso con la calidad, el cuidado del medio ambiente y la seguridad.",
     "politicas": [
         "Política de Negativa al Trabajo Inseguro",
         "Política SIG",

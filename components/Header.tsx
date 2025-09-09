@@ -68,7 +68,6 @@ export default function Header() {
 
           <div className="hidden lg:block">
             <div className="flex items-center space-x-6 relative">
-              {/* Sliding highlight */}
               {highlightStyle && (
                 <div
                   className="absolute top-0 h-full bg-[#F2F2F2] border border-[#1F1B3B] rounded-lg shadow-sm transition-all duration-300"
@@ -80,7 +79,6 @@ export default function Header() {
                   }}
                 />
               )}
-              {/* Menu items */}
               {navigationItems.map((item, idx) => (
                 <a
                   key={item.name}

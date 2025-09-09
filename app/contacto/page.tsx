@@ -45,16 +45,13 @@ export default function ContactoPage() {
     }
 
     return (
-    <main className="max-w-6xl mx-auto px-4 py-12 font-bricolage">
+        <main className="max-w-6xl mx-auto px-4 py-12 font-bricolage">
             <div className="flex flex-col md:flex-row items-start gap-8">
                 <div className="flex flex-col w-full md:w-2/3">
                     <div className="px-4 sm:px-6 lg:px-8">
                         <h1 className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium">
                             {t('titulo')}
                         </h1>
-                        <h2 className="mb-2 text-xl sm:text-2xl font-medium">
-                            {t('subtitulo')}
-                        </h2>
                         <p className="mb-10 text-base sm:text-xl lg:text-2xl">
                             {t('descripcion')}
                         </p>

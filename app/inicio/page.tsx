@@ -34,19 +34,19 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
-      <section className="relative py-[400px] mt-20">
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/pages/servicios/5-Servicios.webp"
-            alt="Fondo sección"
-            fill
-            style={{ objectFit: 'cover', zIndex: 0 }}
-            priority
-          />
-        </div>
-      </section>
-      <section className="w-full flex flex-col py-14 bg-[#F2F2F2]">
+{/*       <Hero />
+ */}      <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] mt-20">
+  <div className="absolute inset-0 w-full h-full">
+    <Image
+      src="/pages/servicios/5-Servicios.webp"
+      alt="Fondo sección"
+      fill
+      style={{ objectFit: 'cover', zIndex: 0 }}
+      priority
+    />
+  </div>
+</section>
+{/*       <section className="w-full flex flex-col py-14 bg-[#F2F2F2]">
         <div className="w-full max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-10 text-[#1F1B3B] text-left">{t('circularidad_titulo')}</h2>
           <div className="flex justify-center w-full">
@@ -122,8 +122,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="w-full flex flex-col items-center py-16 bg-[#F2F2F2]">
+      </section> */}
+{/*       <section className="w-full flex flex-col items-center py-16 bg-[#F2F2F2]">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-20 text-[#1F1B3B]">{t('servicios_titulo')}</h2>
         <div className="w-full max-w-6xl flex items-center justify-center relative h-[400px]">
           <div className="relative w-full h-[400px] flex items-center justify-center">
@@ -170,8 +170,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-      <section className="w-full flex flex-col items-center py-16 bg-[#F2F2F2]">
+      </section> */}
+ {/*      <section className="w-full flex flex-col items-center py-16 bg-[#F2F2F2]">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-30 text-[#1F1B3B]">{t('productos_titulo')}</h2>
         <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mb-10">
           <div className="flex flex-col items-center justify-center border-2 border-[#1F1B3B] rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 hover:border-[#2451D7] group">
@@ -219,7 +219,7 @@ export default function Home() {
             <Image src="/pages/inicio/separador.png" alt={t('productos.separadores').replace(/\n/g, ' ')} width={140} height={140} className="mt-2 transition-transform duration-300 group-hover:scale-110" />
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="relative bg-[#2451D7] py-40 mt-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           <div className="w-full md:w-2/3 text-left">

@@ -1,6 +1,5 @@
 {
-    "titulo": "What Drives Us",
-    "intro": "Since 2015, we have worked to reduce the environmental impact of construction, inspired by the circular economy. After 4 years of research, we started operations in 2020 and today more than 100 companies have improved their sustainability with our eco materials.",
+    "intro": "Construction is one of the industries with the greatest impact on the environment and generates the most waste. This problem motivated us to found CICLO in 2015, with the idea of developing high-quality sustainable materials using innovation and research as the main drivers to achieve our vision. For 5 years, we developed the project and obtained the necessary licenses to finally start operations in 2020.",
     "mision": {
         "titulo": "Mission",
         "descripcion": "Provide the construction market with sustainable and efficient solutions for waste management and the supply of eco materials."
@@ -17,22 +16,31 @@
     "aliados": [
         {
             "titulo": "EPD - International EPD System",
-            "descripcion": "International system for environmental product certification.",
             "img": "/pages/nosotros/EPD.png"
         },
         {
             "titulo": "UTEC - University of Engineering and Technology",
-            "descripcion": "Leading university in engineering and technology.",
             "img": "/pages/nosotros/UTEC.png"
         },
         {
             "titulo": "Peru GBC - Peru Green Building Council",
-            "descripcion": "Initiative to promote sustainable construction.",
             "img": "/pages/nosotros/PGBC.png"
+        },
+        {
+            "titulo": "IMPAQTO Capital",
+            "img": "/pages/nosotros/IMPAQTO.png"
+        },
+        {
+            "titulo": "CCL - Lima Chamber of Commerce",
+            "img": "/pages/nosotros/CCL.png"
+        },
+        {
+            "titulo": "SAINT - GOBAIN",
+            "img": "/pages/nosotros/SAINTGOBAIN.webp"
         }
     ],
     "politicas_titulo": "Corporate Policies",
-    "politicas_intro": "Access our policies and guidelines that reflect our commitment to sustainability, ethics, and safety.",
+    "politicas_intro": "Access our policies that are part of our Integrated Management System and reflect our commitment to quality, environmental care, and safety.",
     "politicas": [
         "Unsafe Work Refusal Policy",
         "SIG Policy",

@@ -96,7 +96,6 @@ export default function ProductosPage() {
                     ))}
                 </div>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
-                    {/* Agregados Reciclados */}
                     <div ref={productos[0].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
@@ -108,19 +107,20 @@ export default function ProductosPage() {
                         </div>
                         <div className="w-full md:w-1/2">
                             <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('agregados.titulo')}</h4>
-                            <p className="mb-2">{t('agregados.descripcion')}</p>
-                            <p className="mb-4">{t('agregados.body')}</p>
-                            <p className="mb-2">{t('agregados.permisos')}</p>
-                            <p className="mb-2">{t('agregados.body2')}</p>
+                            <p className="mb-4">{t('agregados.descripcion')}</p>
                             <div className="mt-6">
-                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer">
+                                <a
+                                    href="/pages/productos/agregados.pdf"
+                                    download="Ficha_Tecnica_Agregados.pdf"
+                                    className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer transition-colors duration-200"
+                                    style={{ display: 'inline-flex', alignItems: 'center' }}
+                                >
                                     {t('agregados.ficha')}
                                     <span className="text-lg">↓</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    {/* Adoquines */}
                     <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
@@ -132,19 +132,20 @@ export default function ProductosPage() {
                         </div>
                         <div className="w-full md:w-1/2">
                             <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('adoquines.titulo')}</h4>
-                            <p className="mb-2">{t('adoquines.descripcion')}</p>
-                            <p className="mb-4">{t('adoquines.body')}</p>
-                            <p className="mb-2">{t('adoquines.beneficios')}</p>
-                            <p className="mb-2">{t('adoquines.body2')}</p>
+                            <p className="mb-4">{t('adoquines.descripcion')}</p>
                             <div className="mt-6">
-                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                <a
+                                    href="/pages/productos/adoquines.pdf"
+                                    download="Ficha_Tecnica_Adoquines.pdf"
+                                    className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer transition-colors duration-200"
+                                    style={{ display: 'inline-flex', alignItems: 'center' }}
+                                >
                                     {t('adoquines.ficha')}
                                     <span className="text-lg">↓</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    {/* Ladrillos */}
                     <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
@@ -156,19 +157,20 @@ export default function ProductosPage() {
                         </div>
                         <div className="w-full md:w-1/2">
                             <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('ladrillos.titulo')}</h4>
-                            <p className="mb-2">{t('ladrillos.descripcion')}</p>
-                            <p className="mb-4">{t('ladrillos.body')}</p>
-                            <p className="mb-2">{t('ladrillos.beneficios')}</p>
-                            <p className="mb-2">{t('ladrillos.body2')}</p>
+                            <p className="mb-4">{t('ladrillos.descripcion')}</p>
                             <div className="mt-6">
-                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                <a
+                                    href="/pages/productos/ladrillos.pdf"
+                                    download="Ficha_Tecnica_Ladrillos.pdf"
+                                    className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer transition-colors duration-200"
+                                    style={{ display: 'inline-flex', alignItems: 'center' }}
+                                >
                                     {t('ladrillos.ficha')}
                                     <span className="text-lg">↓</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    {/* Separadores de Concreto */}
                     <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
                             <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
@@ -180,15 +182,17 @@ export default function ProductosPage() {
                         </div>
                         <div className="w-full md:w-1/2">
                             <h4 className="text-base sm:text-xl lg:text-2xl text-left mb-4 font-medium font-bold">{t('separadores.titulo')}</h4>
-                            <p className="mb-2">{t('separadores.descripcion')}</p>
-                            <p className="mb-4">{t('separadores.body')}</p>
-                            <p className="mb-2">{t('separadores.beneficios')}</p>
-                            <p className="mb-2">{t('separadores.body2')}</p>
+                            <p className="mb-4">{t('separadores.descripcion')}</p>
                             <div className="mt-6">
-                                <button className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2">
+                                <a
+                                    href="/pages/productos/separadores.pdf"
+                                    download="Ficha_Tecnica_Separadores.pdf"
+                                    className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg text-base shadow flex items-center gap-2 cursor-pointer transition-colors duration-200"
+                                    style={{ display: 'inline-flex', alignItems: 'center' }}
+                                >
                                     {t('separadores.ficha')}
                                     <span className="text-lg">↓</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
