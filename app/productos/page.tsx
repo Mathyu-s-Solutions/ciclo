@@ -84,23 +84,46 @@ export default function ProductosPage() {
                 <h1 className="mb-8 max-w-full text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8">
                     {t('titulo')}
                 </h1>
-                <div className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10 bg-[#F2F2F2]">
-                    {productos.map((p) => (
-                        <button
-                            key={p.key}
-                            onClick={() => handleClick(p.key)}
-                            className={`px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer ${active === p.key ? "bg-[#2451D7] text-[#F2F2F2] border-[#2451D7]" : "text-[#2451D7] border-[#2451D7] bg-[#F2F2F2]"}`}
-                        >
-                            {p.label}
-                        </button>
-                    ))}
+                <div
+                    className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10"
+                    style={{ background: 'var(--primary-bg)' }}
+                >
+                    {productos.map((p) => {
+                        const isActive = active === p.key;
+                        return (
+                            <button
+                                key={p.key}
+                                onClick={() => handleClick(p.key)}
+                                className="px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer"
+                                style={isActive
+                                    ? {
+                                        background: 'var(--primary-border)',
+                                        color: 'var(--primary-bg)',
+                                        borderColor: 'var(--primary-border)'
+                                    }
+                                    : {
+                                        background: 'var(--primary-bg)',
+                                        color: 'var(--primary-border)',
+                                        borderColor: 'var(--primary-border)'
+                                    }}
+                            >
+                                {p.label}
+                            </button>
+                        );
+                    })}
                 </div>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
                     <div ref={productos[0].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute top-0 left-1/2 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, -50%)' }}></div>
+                                    <div
+                                        className="absolute top-0 left-1/2 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(-50%, -50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/agregados.png" alt={t('agregados.titulo')} width={220} height={220} className="object-contain" />
                             </div>
@@ -123,9 +146,15 @@ export default function ProductosPage() {
                     </div>
                     <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute top-1/2 right-0 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(50%, -50%)' }}></div>
+                                    <div
+                                        className="absolute top-1/2 right-0 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(50%, -50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/adoquin.png" alt={t('adoquines.titulo')} width={220} height={220} className="object-contain" />
                             </div>
@@ -148,9 +177,15 @@ export default function ProductosPage() {
                     </div>
                     <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute bottom-0 left-1/2 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, 50%)' }}></div>
+                                    <div
+                                        className="absolute bottom-0 left-1/2 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(-50%, 50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/ladrillo.png" alt={t('ladrillos.titulo')} width={220} height={220} className="object-contain" />
                             </div>
@@ -173,9 +208,15 @@ export default function ProductosPage() {
                     </div>
                     <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 border-[#2451D7] relative">
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute top-1/2 left-0 w-6 h-6 rounded-full bg-[#2451D7]" style={{ transform: 'translate(-50%, -50%)' }}></div>
+                                    <div
+                                        className="absolute top-1/2 left-0 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(-50%, -50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/separadores.png" alt={t('separadores.titulo')} width={220} height={220} className="object-contain" />
                             </div>
@@ -201,8 +242,8 @@ export default function ProductosPage() {
             <section className="relative bg-[#52B2EB] py-40 mt-20">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
                     <div className="w-full md:w-2/3 text-left">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">{t('cta.titulo')}</h1>
-                        <h1 className="text-xl sm:text-3xl mb-8">{t('cta.descripcion')}</h1>
+                        <h6 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">{t('cta.titulo')}</h6>
+                        <h6 className="text-xl sm:text-3xl mb-8">{t('cta.descripcion')}</h6>
                     </div>
                     <div className="w-full md:w-1/3 flex md:justify-end justify-center">
                         <button

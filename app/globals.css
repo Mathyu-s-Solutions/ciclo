@@ -14,14 +14,43 @@
 :root {
   --background: #F2F2F2;
   --foreground: #171717;
+  --primary-bg: #F2F2F2;
+  --primary-border: #2451D7;
+  --orb-color: #2451D7;
+  --diametro-color: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #F2F2F2;
-    --foreground: #171717;
-  }
+
+.dark {
+  --background: #1F1B3B;
+  --foreground: #171717;
+  --primary-bg: #1F1B3B;
+  --primary-border: #FFD44D;
+  --orb-color: #FFD44D;
+  --diametro-color: #52B2EB;
 }
+
+.dark h1 {
+  color: #52B2EB;
+}
+
+.dark p {
+  color: #F2F2F2;
+}
+
+.dark h4 {
+  color: #52B2EB;
+}
+
+.dark h2 {
+  color: #52B2EB;
+}
+
+.dark h5 {
+  color: #52B2EB;
+}
+
+
 
 body {
   background: var(--background);
@@ -88,6 +117,14 @@ h4 {
 h5 {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 800;
+  color: #1F1B3B;
+  line-height: 124.5%;
+  letter-spacing: 0;
+}
+
+h6 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 600;
   color: #1F1B3B;
   line-height: 124.5%;
   letter-spacing: 0;

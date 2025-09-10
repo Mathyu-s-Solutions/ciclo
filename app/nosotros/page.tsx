@@ -37,36 +37,39 @@ export default function NosotrosPage() {
             </main>
             <section className="relative bg-[#52B2EB] py-20 py-40">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch justify-center md:justify-center gap-20 px-4">
-                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2"
+                        style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }}>
                         <div className="flex flex-col items-center w-full mb-2">
-                            <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
+                            <svg style={{ color: '#2451D7' }} className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <circle cx="24" cy="24" r="20" strokeWidth="2" />
                                 <path d="M24 14v10l7 7" strokeWidth="2" />
                             </svg>
-                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">{t('mision.titulo')}</h4>
+                            <h4 style={{ color: '#2451D7' }} className="text-2xl mb-2 text-center w-full">{t('mision.titulo')}</h4>
                         </div>
-                        <p className="text-[#1F1B3B] text-base text-left">{t('mision.descripcion')}</p>
+                        <p style={{ color: '#1F1B3B' }} className="text-base text-left">{t('mision.descripcion')}</p>
                     </div>
-                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2"
+                        style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }}>
                         <div className="flex flex-col items-center w-full mb-2">
-                            <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
+                            <svg style={{ color: '#2451D7' }} className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <ellipse cx="24" cy="24" rx="16" ry="10" strokeWidth="2" />
                                 <circle cx="24" cy="24" r="3" strokeWidth="2" />
                                 <path d="M12 24c2-4 8-8 12-8s10 4 12 8" strokeWidth="2" />
                             </svg>
-                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">{t('vision.titulo')}</h4>
+                            <h4 style={{ color: '#2451D7' }} className="text-2xl mb-2 text-center w-full">{t('vision.titulo')}</h4>
                         </div>
-                        <p className="text-[#1F1B3B] text-base text-left">{t('vision.descripcion')}</p>
+                        <p style={{ color: '#1F1B3B' }} className="text-base text-left">{t('vision.descripcion')}</p>
                     </div>
-                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2"
+                        style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }}>
                         <div className="flex flex-col items-center w-full mb-2">
-                            <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
+                            <svg style={{ color: '#2451D7' }} className="w-12 h-12 mb-4" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <path d="M24 8v32M16 24h16" strokeWidth="2" />
                                 <circle cx="24" cy="24" r="20" strokeWidth="2" />
                             </svg>
-                            <h4 className="text-[#2451D7] text-2xl mb-2 text-center w-full">{t('proposito.titulo')}</h4>
+                            <h4 style={{ color: '#2451D7' }} className="text-2xl mb-2 text-center w-full">{t('proposito.titulo')}</h4>
                         </div>
-                        <p className="text-[#1F1B3B] text-base text-left">{t('proposito.descripcion')}</p>
+                        <p style={{ color: '#1F1B3B' }} className="text-base text-left">{t('proposito.descripcion')}</p>
                     </div>
                 </div>
             </section>
