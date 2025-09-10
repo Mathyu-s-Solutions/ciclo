@@ -40,22 +40,6 @@ export default function ProductosPage() {
         },
     ];
     const [active, setActive] = useState<string>(productos[0].key);
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        if (typeof document !== 'undefined') {
-            return document.body.classList.contains('dark-mode');
-        }
-        return false;
-    });
-
-    useEffect(() => {
-        if (typeof document === 'undefined') return;
-        const body = document.body;
-        const observer = new MutationObserver(() => {
-            setIsDarkMode(body.classList.contains('dark-mode'));
-        });
-        observer.observe(body, { attributes: true, attributeFilter: ['class'] });
-        return () => observer.disconnect();
-    }, []);
 
     useEffect(() => {
         const sectionRefs = productos.map(p => p.ref.current).filter(Boolean);
@@ -101,25 +85,27 @@ export default function ProductosPage() {
                     {t('titulo')}
                 </h1>
                 <div
-                    className={`sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10 ${isDarkMode ? 'bg-[#1F1B3B]' : 'bg-[#F2F2F2]'}`}
+                    className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10"
+                    style={{ background: 'var(--primary-bg)' }}
                 >
                     {productos.map((p) => {
                         const isActive = active === p.key;
-                        let btnClass = '';
-                        if (isDarkMode) {
-                            btnClass = isActive
-                                ? `px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer bg-[#2451D7] text-[#F2F2F2] border-[#2451D7]`
-                                : `px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer bg-[#1F1B3B] text-[#F2F2F2] border-[#F2F2F2]`;
-                        } else {
-                            btnClass = isActive
-                                ? `px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer bg-[#2451D7] text-[#F2F2F2] border-[#2451D7]`
-                                : `px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer text-[#2451D7] border-[#2451D7] bg-[#F2F2F2]`;
-                        }
                         return (
                             <button
                                 key={p.key}
                                 onClick={() => handleClick(p.key)}
-                                className={btnClass}
+                                className="px-6 py-2 rounded-lg border font-medium transition-colors duration-200 cursor-pointer"
+                                style={isActive
+                                    ? {
+                                        background: 'var(--primary-border)',
+                                        color: 'var(--primary-bg)',
+                                        borderColor: 'var(--primary-border)'
+                                    }
+                                    : {
+                                        background: 'var(--primary-bg)',
+                                        color: 'var(--primary-border)',
+                                        borderColor: 'var(--primary-border)'
+                                    }}
                             >
                                 {p.label}
                             </button>
@@ -127,14 +113,17 @@ export default function ProductosPage() {
                     })}
                 </div>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
-                    {/* Agregados */}
                     <div ref={productos[0].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
-                                style={{ borderColor: isDarkMode ? '#FFD44D' : '#2451D7' }}>
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute top-0 left-1/2 w-6 h-6 rounded-full"
-                                        style={{ background: isDarkMode ? '#FFD44D' : '#2451D7', transform: 'translate(-50%, -50%)' }}></div>
+                                    <div
+                                        className="absolute top-0 left-1/2 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(-50%, -50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/agregados.png" alt={t('agregados.titulo')} width={220} height={220} className="object-contain" />
                             </div>
@@ -155,14 +144,17 @@ export default function ProductosPage() {
                             </div>
                         </div>
                     </div>
-                    {/* Adoquines */}
                     <div ref={productos[1].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
-                                style={{ borderColor: isDarkMode ? '#FFD44D' : '#2451D7' }}>
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute top-1/2 right-0 w-6 h-6 rounded-full"
-                                        style={{ background: isDarkMode ? '#FFD44D' : '#2451D7', transform: 'translate(50%, -50%)' }}></div>
+                                    <div
+                                        className="absolute top-1/2 right-0 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(50%, -50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/adoquin.png" alt={t('adoquines.titulo')} width={220} height={220} className="object-contain" />
                             </div>
@@ -183,14 +175,17 @@ export default function ProductosPage() {
                             </div>
                         </div>
                     </div>
-                    {/* Ladrillos */}
                     <div ref={productos[2].ref} className="flex flex-col md:flex-row items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
-                                style={{ borderColor: isDarkMode ? '#FFD44D' : '#2451D7' }}>
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute bottom-0 left-1/2 w-6 h-6 rounded-full"
-                                        style={{ background: isDarkMode ? '#FFD44D' : '#2451D7', transform: 'translate(-50%, 50%)' }}></div>
+                                    <div
+                                        className="absolute bottom-0 left-1/2 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(-50%, 50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/ladrillo.png" alt={t('ladrillos.titulo')} width={220} height={220} className="object-contain" />
                             </div>
@@ -211,14 +206,17 @@ export default function ProductosPage() {
                             </div>
                         </div>
                     </div>
-                    {/* Separadores */}
                     <div ref={productos[3].ref} className="flex flex-col md:flex-row-reverse items-center gap-8 scroll-mt-56 sm:scroll-mt-40 md:scroll-mt-72">
                         <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
-                            <div className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
-                                style={{ borderColor: isDarkMode ? '#FFD44D' : '#2451D7' }}>
+                            <div
+                                className="flex items-center justify-center w-60 h-60 sm:w-64 sm:h-64 lg:w-[400px] lg:h-[400px] mx-auto rounded-full border-2 relative"
+                                style={{ borderColor: 'var(--primary-border)', background: 'var(--primary-bg)' }}
+                            >
                                 <div className="absolute inset-0 flex items-center justify-center spin-variable">
-                                    <div className="absolute top-1/2 left-0 w-6 h-6 rounded-full"
-                                        style={{ background: isDarkMode ? '#FFD44D' : '#2451D7', transform: 'translate(-50%, -50%)' }}></div>
+                                    <div
+                                        className="absolute top-1/2 left-0 w-6 h-6 rounded-full"
+                                        style={{ background: 'var(--orb-color)', transform: 'translate(-50%, -50%)' }}
+                                    ></div>
                                 </div>
                                 <Image src="/pages/productos/separadores.png" alt={t('separadores.titulo')} width={220} height={220} className="object-contain" />
                             </div>

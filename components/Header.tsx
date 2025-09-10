@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import { useTheme } from "../context/ThemeContext";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
@@ -10,17 +11,8 @@ export default function Header() {
   const { t, i18n } = useTranslation("common");
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-      } else {
-        document.body.classList.remove('dark-mode');
-      }
-    }
-  }, [isDarkMode]);
   const langBtnRef = useRef<HTMLButtonElement | null>(null);
   const [menuPos, setMenuPos] = useState<{ top: number, left: number } | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -62,6 +54,7 @@ export default function Header() {
     }
   }, [hoveredIndex, currentPath, i18n.language]);
 
+  const isDarkMode = theme === 'dark';
   const darkHeaderBg = isDarkMode ? '#1F1B3B' : undefined;
   const darkTextColor = isDarkMode ? '#52B2EB' : '#1F1B3B';
   const darkHighlightBorder = isDarkMode ? '#FFD44D' : '#1F1B3B';
@@ -175,7 +168,7 @@ export default function Header() {
                   className="flex items-center justify-center w-10 h-10 rounded-full border transition-colors duration-200 cursor-pointer"
                   aria-label="Cambiar modo claro/oscuro"
                   style={{ borderColor: isDarkMode ? '#FFD44D' : '#1F1B3B', background: isDarkMode ? '#1F1B3B' : '#F2F2F2' }}
-                  onClick={() => setIsDarkMode(prev => !prev)}
+                  onClick={toggleTheme}
                 >
                   {isDarkMode ? (
                     <svg className="w-6 h-6" fill="none" stroke="#F2F2F2" viewBox="0 0 24 24">

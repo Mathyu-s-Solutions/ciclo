@@ -14,26 +14,33 @@
 :root {
   --background: #F2F2F2;
   --foreground: #171717;
+  --primary-bg: #F2F2F2;
+  --primary-border: #2451D7;
+  --orb-color: #2451D7;
 }
 
-body.dark-mode {
+
+.dark {
   --background: #1F1B3B;
   --foreground: #171717;
+  --primary-bg: #1F1B3B;
+  --primary-border: #FFD44D;
+  --orb-color: #FFD44D;
 }
 
-body.dark-mode h1 {
+.dark h1 {
   color: #52B2EB;
 }
 
-body.dark-mode p {
+.dark p {
   color: #F2F2F2;
 }
 
-body.dark-mode h4 {
+.dark h4 {
   color: #52B2EB;
 }
 
-body.dark-mode h2 {
+.dark h2 {
   color: #52B2EB;
 }
 
