@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Hero from "../../components/Hero";
 import { useRouter } from "next/navigation";
@@ -12,11 +12,24 @@ export default function Home() {
 
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [angle, setAngle] = React.useState(0);
+  const [isDark, setIsDark] = useState(false);
+
   React.useEffect(() => {
     const interval = setInterval(() => {
       setAngle(a => (a + 1) % 360);
     }, 16);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsDark(document.documentElement.classList.contains("dark"));
+      const observer = new MutationObserver(() => {
+        setIsDark(document.documentElement.classList.contains("dark"));
+      });
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+      return () => observer.disconnect();
+    }
   }, []);
 
   const cards = [
@@ -46,7 +59,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="w-full flex flex-col py-14 bg-[#F2F2F2]">
+      <section className="w-full flex flex-col py-14">
         <div className="w-full max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-10 text-[#1F1B3B] text-left">{t('circularidad_titulo')}</h2>
           <div className="flex justify-center w-full">
@@ -66,7 +79,7 @@ export default function Home() {
                 className="block absolute top-0 left-0"
                 style={{ zIndex: 2 }}
               >
-                <ellipse cx="200" cy="400" rx="180" ry="380" fill="none" stroke="#2451D7" strokeWidth="3" />
+                <ellipse cx="200" cy="400" rx="180" ry="380" fill="none" stroke='var(--primary-border)' strokeWidth="3" />
               </svg>
               {(() => {
                 const cx = 200, cy = 400, rx = 180, ry = 380;
@@ -81,10 +94,9 @@ export default function Home() {
                       top: `${y - 10}px`,
                       width: 20,
                       height: 20,
-                      background: '#2451D7',
+                      background: 'var(--primary-border)',
                       borderRadius: '50%',
                       zIndex: 10,
-                      boxShadow: '0 2px 8px #2451D7a0',
                       transition: 'left 0.1s linear, top 0.1s linear',
                     }}
                   />
@@ -110,8 +122,12 @@ export default function Home() {
                   transform: "rotate(-45deg)"
                 }}
               >
-                <Image src="/pages/inicio/materiales.png" alt={t('circularidad_materiales_alt')} width={200} height={60} />
-              </div>
+                <Image
+                  src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
+                  alt={t('circularidad_materiales_alt')}
+                  width={200}
+                  height={60}
+                />              </div>
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center" style={{ transform: "rotate(-45deg)" }}>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
                   <p className="text-[#1F1B3B] text-left text-base md:text-lg font-medium max-w-[300px]">
@@ -123,7 +139,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full flex flex-col items-center py-16 bg-[#F2F2F2]">
+      <section className="w-full flex flex-col items-center py-16 ">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-20 text-[#1F1B3B]">{t('servicios_titulo')}</h2>
         <div className="w-full max-w-6xl flex items-center justify-center relative h-[400px]">
           <div className="relative w-full h-[400px] flex items-center justify-center">
@@ -142,17 +158,16 @@ export default function Home() {
                   style={{
                     zIndex,
                     transform: `scale(${scale}) translateX(${translateX}px)`,
-                    opacity,
-                    boxShadow: pos === 0 ? '4px 4px 12px #B3B3B3' : '2px 2px 6px #B3B3B3',
+                    opacity
                   }}
                   aria-label={card.titulo}
                   onClick={() => pos !== 0 && setActiveIndex(i)}
                 >
-                  <h4 className="text-[#2451D7] text-2xl mb-2 text-left">{card.titulo}</h4>
+                  <h4 style={{ color: '#2451D7' }} className="text-2xl mb-2 text-left">{card.titulo}</h4>
                   <div className="flex justify-center mb-4">
                     <Image src={card.img} alt={card.titulo} width={64} height={64} />
                   </div>
-                  <p className="text-[#1F1B3B] text-left mt-2">{card.desc}</p>
+                  <p style={{ color: '#1F1B3B' }} className="text-left mt-2">{card.desc}</p>
                 </div>
               );
             })}
@@ -171,52 +186,96 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full flex flex-col items-center py-16 bg-[#F2F2F2]">
+      <section className="w-full flex flex-col items-center py-16">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-30 text-[#1F1B3B]">{t('productos_titulo')}</h2>
         <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mb-10">
-          <div className="flex flex-col items-center justify-center border-2 border-[#1F1B3B] rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 hover:border-[#2451D7] group">
-            <span className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+          <div
+            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+            style={{ borderColor: 'var(--diametro-color)' }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+          >
+            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
               {t('productos.agregados').split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
                   {line}
                   {idx < t('productos.agregados').split('\n').length - 1 && <br />}
                 </React.Fragment>
               ))}
-            </span>
-            <Image src="/pages/inicio/agregado.png" alt={t('productos.agregados').replace(/\n/g, ' ')} width={140} height={140} className="mt-2 transition-transform duration-300 group-hover:scale-110" />
+            </h4>
+            <Image
+              src={isDark ? "/pages/inicio/agregado-white.png" : "/pages/inicio/agregado.png"}
+              alt={t('productos.agregados').replace(/\n/g, ' ')}
+              width={140}
+              height={140}
+              className="mt-2 transition-transform duration-300 group-hover:scale-110"
+            />
           </div>
-          <div className="flex flex-col items-center justify-center border-2 border-[#1F1B3B] rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 hover:border-[#2451D7] group">
-            <span className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+          <div
+            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+            style={{ borderColor: 'var(--diametro-color)' }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+          >
+            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
               {t('productos.adoquines').split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
                   {line}
                   {idx < t('productos.adoquines').split('\n').length - 1 && <br />}
                 </React.Fragment>
               ))}
-            </span>
-            <Image src="/pages/inicio/adoquin.png" alt={t('productos.adoquines').replace(/\n/g, ' ')} width={140} height={140} className="mt-2 transition-transform duration-300 group-hover:scale-110" />
+            </h4>
+            <Image
+              src={isDark ? "/pages/inicio/adoquin-white.png" : "/pages/inicio/adoquin.png"}
+              alt={t('productos.adoquines').replace(/\n/g, ' ')}
+              width={140}
+              height={140}
+              className="mt-2 transition-transform duration-300 group-hover:scale-110"
+            />
           </div>
-          <div className="flex flex-col items-center justify-center border-2 border-[#1F1B3B] rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 hover:border-[#2451D7] group">
-            <span className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+          <div
+            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+            style={{ borderColor: 'var(--diametro-color)' }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+          >
+            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
               {t('productos.ladrillos').split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
                   {line}
                   {idx < t('productos.ladrillos').split('\n').length - 1 && <br />}
                 </React.Fragment>
               ))}
-            </span>
-            <Image src="/pages/inicio/ladrillo.png" alt={t('productos.ladrillos').replace(/\n/g, ' ')} width={140} height={140} className="mt-2 transition-transform duration-300 group-hover:scale-110" />
+            </h4>
+            <Image
+              src={isDark ? "/pages/inicio/ladrillo-white.png" : "/pages/inicio/ladrillo.png"}
+              alt={t('productos.ladrillos').replace(/\n/g, ' ')}
+              width={140}
+              height={140}
+              className="mt-2 transition-transform duration-300 group-hover:scale-110"
+            />
           </div>
-          <div className="flex flex-col items-center justify-center border-2 border-[#1F1B3B] rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 hover:border-[#2451D7] group">
-            <span className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+          <div
+            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+            style={{ borderColor: 'var(--diametro-color)' }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+          >
+            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
               {t('productos.separadores').split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
                   {line}
                   {idx < t('productos.separadores').split('\n').length - 1 && <br />}
                 </React.Fragment>
               ))}
-            </span>
-            <Image src="/pages/inicio/separador.png" alt={t('productos.separadores').replace(/\n/g, ' ')} width={140} height={140} className="mt-2 transition-transform duration-300 group-hover:scale-110" />
+            </h4>
+            <Image
+              src={isDark ? "/pages/inicio/separador-white.png" : "/pages/inicio/separador.png"}
+              alt={t('productos.separadores').replace(/\n/g, ' ')}
+              width={140}
+              height={140}
+              className="mt-2 transition-transform duration-300 group-hover:scale-110"
+            />
           </div>
         </div>
       </section>

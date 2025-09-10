@@ -17,6 +17,7 @@
   --primary-bg: #F2F2F2;
   --primary-border: #2451D7;
   --orb-color: #2451D7;
+  --diametro-color: #171717;
 }
 
 
@@ -26,6 +27,7 @@
   --primary-bg: #1F1B3B;
   --primary-border: #FFD44D;
   --orb-color: #FFD44D;
+  --diametro-color: #52B2EB;
 }
 
 .dark h1 {
@@ -43,6 +45,11 @@
 .dark h2 {
   color: #52B2EB;
 }
+
+.dark h5 {
+  color: #52B2EB;
+}
+
 
 
 body {
