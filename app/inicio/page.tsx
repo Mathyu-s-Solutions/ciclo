@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="relative py-[400px] mt-20">
+      <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] mt-20">
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="/pages/servicios/5-Servicios.webp"
@@ -223,7 +223,6 @@ export default function Home() {
       <section className="relative bg-[#2451D7] py-40 mt-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
           <div className="w-full md:w-2/3 text-left">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">{t('cta.titulo')}</h3>
             <h3 className="text-xl sm:text-3xl mb-8">{t('cta.descripcion')}</h3>
           </div>
           <div className="w-full md:w-1/3 flex md:justify-end justify-center">

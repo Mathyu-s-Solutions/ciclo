@@ -1,32 +1,20 @@
 {
     "titulo": "Learn more about our services",
     "servicio1": {
-        "subtitulo": "Subtitle 1",
-        "descripcion": "Descriptive",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "permisos": "Permissions and authorizations",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+        "subtitulo": "Comprehensive Management and Recycling of C&D Waste",
+        "descripcion": "We are an EO-RS with official registration from MINAM to carry out the collection, transportation, and final disposal of C&D waste under the highest safety and quality standards. We stand out from other operators because we have a recycling plant where we process all recyclable material into new products. This way, our clients can mitigate the environmental impact of their projects."
     },
     "servicio2": {
-        "subtitulo": "Subtitle 2",
-        "descripcion": "Digital media - Recylink Platform",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Environmental Benefits",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+        "subtitulo": "Industrial Waste Reuse and Treatment Projects",
+        "descripcion": "We apply innovation to develop eco-materials not only with recycled material from C&D waste, but over the years we have enabled the treatment of various types of industrial waste from different industries."
     },
     "servicio3": {
-        "subtitulo": "Subtitle 3",
-        "descripcion": "Additional description",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "More benefits",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+        "subtitulo": "Other services",
+        "descripcion": "We offer additional services related to demolition, construction, and waste management."
     },
     "servicio4": {
-        "subtitulo": "Subtitle 4",
-        "descripcion": "Additional title",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Extra benefit",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+    "subtitulo": "Mocked service",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     "cta": {
         "titulo": "Do you want to be part of the change?",

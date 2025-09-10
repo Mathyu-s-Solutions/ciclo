@@ -1,7 +1,6 @@
 {
     "cta": {
-        "titulo": "Transform to inspire",
-        "descripcion": "Join the circular movement, contact us to learn how you can decarbonize your operations.",
+        "descripcion": "Find out how you can reduce the carbon footprint of your projects by recycling your C&D waste and using eco materials for construction",
         "boton": "Contact us"
     },
     "productos_titulo": "Products",
@@ -13,14 +12,14 @@
         "separadores": "Concrete\nSeparators"
     },
     "servicios": {
-        "card1_titulo": "Comprehensive Management and RCD Recycling",
-        "card1_desc": "From your waste to inputs for a circular future.",
-        "card2_titulo": "Industrial Waste Valorization Projects",
-        "card2_desc": "From your waste to inputs for a circular future."
+        "card1_titulo": "Comprehensive Management and Recycling of C&D Waste",
+        "card1_desc": "We are an EO-RS authorized to collect, transport, dispose, and recycle C&D waste",
+        "card2_titulo": "Industrial Waste Recycling",
+        "card2_desc": "We develop custom projects for each client"
     },
     "circularidad_titulo": "Circularity building",
-    "circularidad_texto": "We have the first eco material made with recycled aggregates in Latin America to have the EPD eco label",
-    "hero_titulo": "Transform to inspire",
+    "circularidad_texto": "We are inspired by the circular economy to transform Construction and Demolition Waste (C&D) into new high-quality, sustainable materials at an affordable price",
+    "hero_titulo": "We transform waste to inspire a circular world",
     "hero_texto": "We reduce the environmental impact of companies that generate debris and consume prefabricated construction materials, without reducing quality and without increasing the budget.",
     "hero_boton": "Discover more",
     "hero_img_alt": "Construction worker"

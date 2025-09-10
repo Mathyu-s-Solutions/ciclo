@@ -2,34 +2,22 @@
     "titulo": "Conoce nuestros productos",
     "agregados": {
         "titulo": "Agregados Reciclados",
-        "descripcion": "Descriptivo",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "permisos": "Permisos y autorizaciones",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "Nuestro agregados reciclados está diseñados para ser usados en aplicaciones no estructurales. Contamos con diferentes tipos según su granulometría.",
         "ficha": "Ficha Técnica"
     },
     "adoquines": {
         "titulo": "Adoquines",
-        "descripcion": "Medios digitales - Plataforma Recylink",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Beneficios Ambientales",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "Contamos con los primeros eco adoquines de Latinoamérica fabricados con agregados reciclados en contar con la eco etiqueta EPD. Elaboramos adoquines tipo I, II y III, con diversos colores.",
         "ficha": "Ficha Técnica"
     },
     "ladrillos": {
         "titulo": "Ladrillos",
-        "descripcion": "Descripción adicional",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Más beneficios",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "Nuestros ladrillos pueden ser usados en diferentes aplicaciones no portantes. Cuenta con medidas de 9 cm de ancho, 18 cm de alto y 39 cm de largo.",
         "ficha": "Ficha Técnica"
     },
     "separadores": {
         "titulo": "Separadores de Concreto",
-        "descripcion": "Título adicional",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Beneficio extra",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
+        "descripcion": "Los separadores de concreto están elaborados con concreto reciclado de alta resistancia e incorpora ganchos de nylon inyectado, lo que garantiza la correcta separación entre el acero de refuerzo y la superficie exterior del concreto, cumpliendo con el recubrimiento exigido por la norma técnica E.060",
         "ficha": "Ficha Técnica"
     },
     "cta": {

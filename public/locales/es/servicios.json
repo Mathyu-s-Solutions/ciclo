@@ -1,32 +1,20 @@
 {
     "titulo": "Aprende más de nuestros servicios",
     "servicio1": {
-        "subtitulo": "Subtitulo 1",
-        "descripcion": "Descriptivo",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "permisos": "Permisos y autorizaciones",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+        "subtitulo": "Gestión integral y Reciclaje de RCD",
+        "descripcion": "Somos una EO-RS con registro autoritativo del MINAM para realizar las actividades de recolección, transporte y disposición final de RCD bajo los más altos estándares de seguridad y calidad. Nos diferenciamos de otras empresas operadoras porque contamos con una planta de reciclaje de RCD a donde llevamos todo el material reciclable para convertirlo en nuevos materiales. De esta forma, nuestros clientes logran mitigar el impacto ambiental de sus proyectos."
     },
     "servicio2": {
-        "subtitulo": "Subtitulo 2",
-        "descripcion": "Medios digitales - Plataforma Recylink",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Beneficios Ambientales",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+        "subtitulo": "Proyectos de re aprovechamiento y tratamiento de residuos industriales",
+        "descripcion": "Aplicamos innovación para desarrollar eco materiales no solo con material reciclado proveniente del RCD, sino que, en estos años de operación, hemos viabilizado el tratamiento de diversos tipos de residuos industriales de diferentes industrias."
     },
     "servicio3": {
-        "subtitulo": "Subtitulo 3",
-        "descripcion": "Descripción adicional",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Más beneficios",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+        "subtitulo": "Otros servicios",
+        "descripcion": "Contamos con servicios adicionales relacionados la demolición, construcción y gestión de residuos."
     },
     "servicio4": {
-        "subtitulo": "Subtitulo 4",
-        "descripcion": "Título adicional",
-        "body": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:",
-        "beneficios": "Beneficio extra",
-        "body2": "Body text for your whole article or post. We'll put in some lorem ipsum to show how a filled-out page might look:"
+    "subtitulo": "Servicio mockeado",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     "cta": {
         "titulo": "¿Quieres ser parte del cambio?",

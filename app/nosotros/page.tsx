@@ -22,16 +22,13 @@ export default function NosotrosPage() {
     return (
         <>
             <main className="max-w-6xl mx-auto px-4 py-12 overflow-x-hidden">
-                <h1 className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium px-4 sm:px-6 lg:px-8 mb-20">
-                    {t('titulo')}
-                </h1>
-                <div className="flex flex-col md:flex-row items-center gap-8 mb-20 px-4 sm:px-6 lg:px-8 relative  md:translate-x-20" style={{ minHeight: '260px' }}>
-                    <div className="w-full md:w-1/2 flex justify-center md:justify-end z-20 ">
-                        <p className="bg-white rounded-lg shadow-lg p-6 text-[#1F1B3B] text-base sm:text-xl font-bricolage max-w-md" style={{ boxShadow: '4px 4px 6px #B3B3B3' }}>
+                <div className="flex flex-col md:flex-row items-center gap-8 mb-20 pt-30 px-4 sm:px-6 lg:px-8 relative" style={{ minHeight: '260px' }}>
+                    <div className="w-full md:w-1/2 flex justify-center md:justify-start z-20">
+                        <p className="text-[#1F1B3B] text-base sm:text-xl font-bricolage max-w-2xl md:max-w-3xl px-2 md:px-0">
                             {t('intro')}
                         </p>
                     </div>
-                    <div className="w-full md:w-1/2 flex justify-center md:justify-start z-10 md:-translate-x-20 -translate-y-15">
+                    <div className="w-full md:w-1/2 flex justify-center md:justify-end">
                         <div className="w-80 h-48 md:w-[28rem] md:h-64 rounded-lg overflow-hidden">
                             <Image src="/pages/servicios/5-Servicios.webp" alt="Fondo" width={400} height={220} className="object-cover w-full h-full" />
                         </div>
@@ -40,7 +37,7 @@ export default function NosotrosPage() {
             </main>
             <section className="relative bg-[#52B2EB] py-20 py-40">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch justify-center md:justify-center gap-20 px-4">
-                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
                             <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <circle cx="24" cy="24" r="20" strokeWidth="2" />
@@ -50,7 +47,7 @@ export default function NosotrosPage() {
                         </div>
                         <p className="text-[#1F1B3B] text-base text-left">{t('mision.descripcion')}</p>
                     </div>
-                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
                             <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <ellipse cx="24" cy="24" rx="16" ry="10" strokeWidth="2" />
@@ -61,7 +58,7 @@ export default function NosotrosPage() {
                         </div>
                         <p className="text-[#1F1B3B] text-base text-left">{t('vision.descripcion')}</p>
                     </div>
-                    <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ boxShadow: '4px 4px 6px #B3B3B3' }} >
+                    <div className="rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-1/3 max-w-2xs flex-1 font-bricolage transition-transform duration-300 hover:-translate-y-2" style={{ background: '#F2F2F2', boxShadow: '4px 4px 6px #B3B3B3' }} >
                         <div className="flex flex-col items-center w-full mb-2">
                             <svg className="w-12 h-12 mb-4 text-[#2451D7]" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                                 <path d="M24 8v32M16 24h16" strokeWidth="2" />
@@ -78,10 +75,9 @@ export default function NosotrosPage() {
                     {t('aliados_titulo')}
                 </h1>
                 <div className="flex flex-col md:flex-row items-center gap-8 px-4 sm:px-6 lg:px-8">
-                    <div className="w-full md:w-1/2 flex flex-col justify-between items-start min-h-[180px] h-[220px]">
-                        <div>
+                    <div className="w-full md:w-1/2 flex flex-col justify-center items-start min-h-[180px] h-[220px]">
+                        <div className="flex flex-col justify-center h-full">
                             <h4 className={`text-[#2451D7] text-2xl mb-4 transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}>{aliados[index].titulo}</h4>
-                            <p className={`text-[#1F1B3B] text-base mb-8 max-w-xs transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}>{aliados[index].descripcion}</p>
                         </div>
                         <div className="flex gap-2 items-center mt-4 mb-2">
                             {aliados.map((a, i) => (
