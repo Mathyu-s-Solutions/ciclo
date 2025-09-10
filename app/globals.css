@@ -16,11 +16,17 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #F2F2F2;
-    --foreground: #171717;
-  }
+body.dark-mode {
+  --background: #1F1B3B;
+  --foreground: #171717;
+}
+
+body.dark-mode h1 {
+  color: #52B2EB;
+}
+
+body.dark-mode p {
+  color: #F2F2F2;
 }
 
 body {
