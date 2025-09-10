@@ -1,7 +1,6 @@
 {
     "cta": {
-        "titulo": "Transformar para inspirar",
-        "descripcion": "Súmate al movimiento circular, contáctanos para explicarte cómo puedes descarbonizar tus operaciones.",
+        "descripcion": "Entérate cómo puedes mitigar tu huella de carbono de tus proyectos reciclando tus RCD´s y usando eco materiales para la construcción",
         "boton": "Contáctanos"
     },
     "productos_titulo": "Productos",
@@ -13,14 +12,14 @@
         "separadores": "Separadores\nde Concreto"
     },
     "servicios": {
-        "card1_titulo": "Gestión Integral y Reciclaje RCD",
-        "card1_desc": "De tus residuos a insumos para un futuro circular.",
-        "card2_titulo": "Proyectos de Valorización de Residuos Industriales",
-        "card2_desc": "De tus residuos a insumos para un futuro circular."
+        "card1_titulo": "Gestión Integral y Reciclaje de RCD",
+        "card1_desc": "Somos una EO-RS autorizada para recolectar, transportar, disponer y reciclar RCD",
+        "card2_titulo": "Reciclaje de Residuos Industriales",
+        "card2_desc": "Desarrollamos proyectos a medida del cliente"
     },
     "circularidad_titulo": "Construyendo circularidad",
-    "circularidad_texto": "Tenemos el primer eco material fabricado con agregados reciclados en Latinoamérica en contar con la eco etiqueta EPD",
-    "hero_titulo": "Transformar para inspirar",
+    "circularidad_texto": "Nos inspiramos en la economía circular para transformar Residuos de la Construcción y Demolición (RCD) en nuevos materiales sustentables de calidad y a precio accesible",
+    "hero_titulo": "Transformamos residuos para inspirar un mundo circular",
     "hero_texto": "Reducimos el impacto ambiental de las empresas que generan escombros y que consumen materiales de construcción pre fabricados, sin reducir la calidad y sin incrementar el presupuesto.",
     "hero_boton": "Descubre más",
     "hero_img_alt": "Trabajador de construcción"
