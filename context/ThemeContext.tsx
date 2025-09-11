@@ -10,18 +10,25 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-        if (typeof window !== 'undefined') {
-            const storedTheme = localStorage.getItem('theme');
-            return storedTheme === 'dark' ? 'dark' : 'light';
-        }
-        return 'light';
-    });
+    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        document.documentElement.classList.toggle('dark', theme === 'dark');
-        localStorage.setItem('theme', theme);
-    }, [theme]);
+        setMounted(true);
+        if (typeof window !== 'undefined') {
+            const storedTheme = localStorage.getItem('theme');
+            const initialTheme = storedTheme === 'dark' ? 'dark' : 'light';
+            setTheme(initialTheme);
+            document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+        }
+    }, []);
+
+    useEffect(() => {
+        if (mounted) {
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            localStorage.setItem('theme', theme);
+        }
+    }, [theme, mounted]);
 
     const toggleTheme = () => {
         setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
