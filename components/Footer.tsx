@@ -12,7 +12,13 @@ const Footer = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-x-8 md:gap-x-10 lg:gap-x-16 gap-y-8 text-[#F2F2F2]">
                 <div className="sm:col-span-2 md:col-span-2 lg:col-span-2 flex flex-col min-w-[180px] md:max-w-sm lg:max-w-md">
                     <div className="mb-1">
-                        <Image src="/img/ciclo-white.png" alt="Ciclo Logo" width={140} height={45} />
+                        <Image 
+                            src="/img/ciclo-white.png" 
+                            alt="Ciclo Logo" 
+                            width={140} 
+                            height={45}
+                            style={{ height: "auto" }}
+                        />
                     </div>
                     <h3 className="font-bricolage font-normal text-base md:text-sm lg:text-sm mb-8 text-[#F2F2F2] max-w-xs md:max-w-sm lg:max-w-md text-left break-words">{t('footer.descripcion')}</h3>
                     <div className="flex gap-4 text-2xl text-[#4F5BFF]">
