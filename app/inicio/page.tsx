@@ -173,7 +173,7 @@ export default function Home() {
             })}
           </div>
           <div className="relative w-full h-[400px] flex items-center justify-center">
-            {["/pages/servicios/5-Servicios.webp", "/pages/servicios/5-Servicios2.webp"].map((img, idx) => (
+            {["/pages/inicio/services.jpg", "/pages/servicios/5-Servicios2.webp"].map((img, idx) => (
               <Image
                 key={img}
                 src={img}
