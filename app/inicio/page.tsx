@@ -1,10 +1,12 @@
 "use client"
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import Hero from "../../components/Hero";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import '../../styles/spin-variable.css';
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Home() {
   const router = useRouter();
@@ -12,24 +14,19 @@ export default function Home() {
 
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [angle, setAngle] = React.useState(0);
-  const [isDark, setIsDark] = useState(false);
-
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      setAngle(a => (a + 1) % 360);
-    }, 16);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsDark(document.documentElement.classList.contains("dark"));
-      const observer = new MutationObserver(() => {
-        setIsDark(document.documentElement.classList.contains("dark"));
-      });
-      observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-      return () => observer.disconnect();
-    }
+    let frame: number;
+    let lastTime = performance.now();
+    const animate = (now: number) => {
+      const delta = now - lastTime;
+      lastTime = now;
+      setAngle(a => (a + delta * 0.06) % 360);
+      frame = requestAnimationFrame(animate);
+    };
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const cards = [
@@ -81,28 +78,18 @@ export default function Home() {
               >
                 <ellipse cx="200" cy="400" rx="180" ry="380" fill="none" stroke='var(--primary-border)' strokeWidth="3" />
               </svg>
-              {(() => {
-                const cx = 200, cy = 400, rx = 180, ry = 380;
-                const rad = (angle * Math.PI) / 180;
-                const x = cx + rx * Math.cos(rad);
-                const y = cy + ry * Math.sin(rad);
-                return (
-                  <div
-                    style={{
-                      position: 'absolute',
-                      left: `${x - 10}px`,
-                      top: `${y - 10}px`,
-                      width: 20,
-                      height: 20,
-                      background: 'var(--primary-border)',
-                      borderRadius: '50%',
-                      zIndex: 10,
-                      transition: 'left 0.1s linear, top 0.1s linear',
-                    }}
-                  />
-                );
-              })()}
               <div
+                style={{
+                  position: 'absolute',
+                  left: `${200 + 180 * Math.cos(angle * Math.PI / 180) - 10}px`,
+                  top: `${400 + 380 * Math.sin(angle * Math.PI / 180) - 10}px`,
+                  width: 20,
+                  height: 20,
+                  background: 'var(--primary-border, #2451D7)',
+                  borderRadius: '50%',
+                  zIndex: 10,
+                }}
+              />             <div
                 className="absolute"
                 style={{
                   top: '450px',
