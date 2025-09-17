@@ -51,7 +51,7 @@ export default function Home() {
       <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] mt-20">
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/pages/servicios/5-Servicios.webp"
+            src="/pages/inicio/servicio1-inicio.jpg"
             alt="Fondo sección"
             fill
             style={{ objectFit: 'cover', zIndex: 0 }}
@@ -111,7 +111,10 @@ export default function Home() {
                   transform: "rotate(-45deg)"
                 }}
               >
-                <Image src="/pages/inicio/residuos.png" alt={t('circularidad_residuos_alt')} width={200} height={60} />
+                <Image src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
+                  alt={t('circularidad_residuos_alt')}
+                  width={200}
+                  height={60} />
               </div>
               <div
                 className="absolute"
@@ -173,7 +176,7 @@ export default function Home() {
             })}
           </div>
           <div className="relative w-full h-[400px] flex items-center justify-center">
-            {["/pages/inicio/services.jpg", "/pages/servicios/5-Servicios2.webp"].map((img, idx) => (
+            {["/pages/inicio/servicio1-inicio.jpg", "/pages/inicio/servicio2-inicio.jpg"].map((img, idx) => (
               <Image
                 key={img}
                 src={img}
