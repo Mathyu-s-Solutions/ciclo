@@ -16,7 +16,7 @@ const Footer = () => {
                     </div>
                     <h3 className="font-bricolage font-normal text-base md:text-sm lg:text-sm mb-8 text-[#F2F2F2] max-w-xs md:max-w-sm lg:max-w-md text-left break-words">{t('footer.descripcion')}</h3>
                     <div className="flex gap-4 text-2xl text-[#4F5BFF]">
-                        <a href="#" aria-label="YouTube">
+                        <a href="https://www.youtube.com/@mprecicla1384" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                             <Image
                                 src="/img/youtube.png"
                                 alt="YouTube"
@@ -24,7 +24,7 @@ const Footer = () => {
                                 height={48}
                             />
                         </a>
-                        <a href="#" aria-label="Facebook">
+                        <a href="https://www.facebook.com/CICLOPERU" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                             <Image
                                 src="/img/facebook.png"
                                 alt="Facebook"
@@ -32,7 +32,7 @@ const Footer = () => {
                                 height={48}
                             />
                         </a>
-                        <a href="#" aria-label="Instagram">
+                        <a href="https://www.instagram.com/ciclo_mprecicla/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                             <Image
                                 src="/img/instagram.png"
                                 alt="Instagram"
@@ -40,7 +40,7 @@ const Footer = () => {
                                 height={48}
                             />
                         </a>
-                        <a href="#" aria-label="LinkedIn">
+                        <a href="https://linkedin.com/company/cicloperu" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                             <Image
                                 src="/img/linkedin.png"
                                 alt="LinkedIn"

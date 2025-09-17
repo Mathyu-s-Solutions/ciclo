@@ -47,12 +47,14 @@ export default function Home() {
       <Hero />
       <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] mt-20">
         <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/pages/inicio/servicio1-inicio.jpg"
-            alt="Fondo sección"
-            fill
-            style={{ objectFit: 'cover', zIndex: 0 }}
-            priority
+          <video
+            src="/videos/video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="object-cover w-full h-full"
+            style={{ zIndex: 0 }}
           />
         </div>
       </section>
