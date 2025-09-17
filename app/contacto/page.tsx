@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import emailjs from 'emailjs-com';
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
@@ -18,6 +19,7 @@ export default function ContactoPage() {
         asunto: '',
         mensaje: ''
     });
+    const [status, setStatus] = useState('');
 
     function validate() {
         const newErrors: any = {};
@@ -39,8 +41,25 @@ export default function ContactoPage() {
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         if (validate()) {
-            alert(t('exito'));
-            setForm({ nombre: '', email: '', asunto: '', mensaje: '' });
+            setStatus('Enviando...');
+            emailjs.send(
+                'service_p6q4vdu',
+                'template_ezuhvpu',
+                {
+                    from_name: form.nombre,
+                    from_email: form.email,
+                    subject: form.asunto,
+                    message: form.mensaje,
+                },
+                'qwRtMAUUeU0B_yrRf'
+            )
+                .then(() => {
+                    setStatus(t('exito'));
+                    setForm({ nombre: '', email: '', asunto: '', mensaje: '' });
+                })
+                .catch(() => {
+                    setStatus(t('error'));
+                });
         }
     }
 
@@ -106,6 +125,7 @@ export default function ContactoPage() {
                                     <button type="submit" className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg mt-4 hover:bg-[#1F1B3B] hover:text-[#FFD34E] transition-colors duration-200 cursor-pointer">
                                         {t('enviar')}
                                     </button>
+                                    {status && <span className="text-sm mt-2">{status}</span>}
                                 </form>
                             </div>
 

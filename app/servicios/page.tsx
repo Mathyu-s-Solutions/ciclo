@@ -18,7 +18,7 @@ export default function ServiciosPage() {
                             <p className="mb-2">{t('servicio1.descripcion')}</p>
                         </div>
                         <div className="w-full md:w-1/2 flex justify-start">
-                            <Image src="/pages/servicios/5-Servicios.webp" alt="Servicio 1" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
+                            <Image src="/pages/servicios/servicios1.jpg" alt="Servicio 1" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row-reverse items-center gap-8">
@@ -28,7 +28,7 @@ export default function ServiciosPage() {
                                 <p className="mb-2">{t('servicio2.descripcion')}</p>
                             </div>
                             <div className="w-full md:w-1/2 flex justify-end">
-                                <Image src="/pages/servicios/5-Servicios2.webp" alt="Servicio 2" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
+                                <Image src="/pages/servicios/servicios2.jpg" alt="Servicio 2" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                             </div>
                         </div>
                     </div>
@@ -39,18 +39,7 @@ export default function ServiciosPage() {
                                 <p className="mb-2">{t('servicio3.descripcion')}</p>
                             </div>
                             <div className="w-full md:w-1/2 flex justify-start mb-6 md:mb-0">
-                                <Image src="/pages/servicios/5-Servicios.webp" alt="Servicio 3" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-                        <div className="flex flex-col md:flex-row items-center gap-8">
-                            <div className="w-full md:w-1/2">
-                                <h2 className="text-base sm:text-xl lg:text-2xl text-left mb-4">{t('servicio4.subtitulo')}</h2>
-                                <p className="mb-2">{t('servicio4.descripcion')}</p>
-                            </div>
-                            <div className="w-full md:w-1/2 flex justify-end mb-6 md:mb-0">
-                                <Image src="/pages/servicios/5-Servicios2.webp" alt="Servicio 4" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
+                                <Image src="/pages/servicios/servicios3.jpg" alt="Servicio 3" width={400} height={220} className="rounded-lg w-full max-w-md bg-gray-100 object-cover transition-transform duration-300 hover:-translate-y-2" />
                             </div>
                         </div>
                     </div>
