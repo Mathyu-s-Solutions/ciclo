@@ -100,7 +100,7 @@ export default function Hero() {
             >
               <ambientLight intensity={-0.82} />
               <TextRing text="Transformar para inspirar" color={getComputedStyle(document.documentElement).getPropertyValue('--orb-color').trim() || '#2451D7'} />
-              <CenterImage src="/img/worker.png" />
+              <CenterImage src="/img/worker.webp" />
             </Canvas>
           </div>
         </div>

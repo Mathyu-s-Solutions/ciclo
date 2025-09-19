@@ -18,7 +18,7 @@ export default function I18nProvider({ children }: { children: React.ReactNode }
         return (
             <div className="w-screen h-screen flex items-center justify-center bg-[#F2F2F2] dark:bg-[#1F1B3B]">
                 {/*                 <img src="/img/ciclo-logo.png" alt="Ciclo Logo" className="h-20 w-auto dark:hidden" />
- */}                <img src="/img/ciclo-white.png" alt="Ciclo Logo White" className="h-20 w-auto hidden dark:block" />
+ */}                <img src="/img/ciclo-white.webp" alt="Ciclo Logo White" className="h-20 w-auto hidden dark:block" />
             </div>
         );
     }
