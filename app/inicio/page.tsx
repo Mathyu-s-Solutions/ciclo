@@ -155,11 +155,15 @@ export default function Home() {
                   aria-label={card.titulo}
                   onClick={() => pos !== 0 && setActiveIndex(i)}
                 >
-                  <h4 style={{ color: '#2451D7' }} className="text-2xl mb-2 text-left">{card.titulo}</h4>
+                  <div className="mb-8">
+                    <h4 style={{ color: '#2451D7' }} className="text-2xl text-left">{card.titulo}</h4>
+                  </div>
                   <div className="flex justify-center mb-4">
                     <Image src={card.img} alt={card.titulo} width={64} height={64} />
                   </div>
-                  <p style={{ color: '#1F1B3B' }} className="text-left mt-2">{card.desc}</p>
+                  <div className="mt-6">
+                    <p style={{ color: '#1F1B3B' }} className="text-left">{card.desc}</p>
+                  </div>
                 </div>
               );
             })}
