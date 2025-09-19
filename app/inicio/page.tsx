@@ -141,7 +141,7 @@ export default function Home() {
                 >
                   <Image src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
                     alt={t('circularidad_residuos_alt')}
-                    width={200}
+                    width={230}
                     height={60} />
                 </div>
                 <div
@@ -156,7 +156,7 @@ export default function Home() {
                   <Image
                     src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
                     alt={t('circularidad_materiales_alt')}
-                    width={200}
+                    width={230}
                     height={60}
                   />
                 </div>
@@ -325,12 +325,12 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mb-10">
             <div
-              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 aspect-square transition-all duration-300 group"
+              className="flex flex-col items-center justify-center border-2 rounded-full w-65 h-65 aspect-square transition-all duration-300 group"
               style={{ borderColor: 'var(--diametro-color)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
             >
-              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+              <h4 className="text-[#2451D7] text-lg font-semibold mt-4 text-center">
                 {t('productos.agregados').split('\n').map((line, idx) => (
                   <React.Fragment key={idx}>
                     {line}
@@ -347,12 +347,12 @@ export default function Home() {
               />
             </div>
             <div
-              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              className="flex flex-col items-center justify-center border-2 rounded-full w-65 h-65 -mx-3 aspect-square transition-all duration-300 group"
               style={{ borderColor: 'var(--diametro-color)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
             >
-              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+              <h4 className="text-[#2451D7] text-lg font-semibold mt-4 text-center">
                 {t('productos.adoquines').split('\n').map((line, idx) => (
                   <React.Fragment key={idx}>
                     {line}
@@ -369,12 +369,12 @@ export default function Home() {
               />
             </div>
             <div
-              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              className="flex flex-col items-center justify-center border-2 rounded-full w-65 h-65 -mx-3 aspect-square transition-all duration-300 group"
               style={{ borderColor: 'var(--diametro-color)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
             >
-              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+              <h4 className="text-[#2451D7] text-lg font-semibold mt-4 text-center">
                 {t('productos.ladrillos').split('\n').map((line, idx) => (
                   <React.Fragment key={idx}>
                     {line}
@@ -391,12 +391,12 @@ export default function Home() {
               />
             </div>
             <div
-              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              className="flex flex-col items-center justify-center border-2 rounded-full w-65 h-65 -mx-3 aspect-square transition-all duration-300 group"
               style={{ borderColor: 'var(--diametro-color)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
             >
-              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+              <h4 className="text-[#2451D7] text-lg font-semibold mt-4 text-center">
                 {t('productos.separadores').split('\n').map((line, idx) => (
                   <React.Fragment key={idx}>
                     {line}
