@@ -48,7 +48,7 @@ export default function Home() {
       <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] mt-20">
         <div className="absolute inset-0 w-full h-full">
           <video
-            src="/videos/video_h264.mp4"
+            src="/videos/video.mp4"
             autoPlay
             loop
             muted
