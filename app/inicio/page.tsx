@@ -16,6 +16,23 @@ export default function Home() {
   const [angle, setAngle] = React.useState(0);
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+
+  const [isTabletOrMobile, setIsTabletOrMobile] = React.useState(false);
+  React.useEffect(() => {
+    const checkSize = () => setIsTabletOrMobile(window.innerWidth < 769);
+    checkSize();
+    window.addEventListener('resize', checkSize);
+    return () => window.removeEventListener('resize', checkSize);
+  }, []);
+
+  const [isTablet, setIsTablet] = React.useState(false);
+  React.useEffect(() => {
+    const checkTablet = () => setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+    checkTablet();
+    window.addEventListener('resize', checkTablet);
+    return () => window.removeEventListener('resize', checkTablet);
+  }, []);
+
   React.useEffect(() => {
     let frame: number;
     let lastTime = performance.now();
@@ -61,91 +78,120 @@ export default function Home() {
       <section className="w-full flex flex-col py-14">
         <div className="w-full max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-10 text-[#1F1B3B] text-left">{t('circularidad_titulo')}</h2>
-          <div className="flex justify-center w-full">
-            <div
-              className="relative flex justify-center items-center"
-              style={{
-                width: 400,
-                height: 800,
-                transform: "rotate(45deg)",
-                transformOrigin: "200px 400px",
-              }}
-            >
-              <svg
-                width="400"
-                height="800"
-                viewBox="0 0 400 800"
-                className="block absolute top-0 left-0"
-                style={{ zIndex: 2 }}
-              >
-                <ellipse cx="200" cy="400" rx="180" ry="380" fill="none" stroke='var(--primary-border)' strokeWidth="3" />
-              </svg>
-              <div
-                style={{
-                  position: 'absolute',
-                  left: `${200 + 180 * Math.cos(angle * Math.PI / 180) - 10}px`,
-                  top: `${400 + 380 * Math.sin(angle * Math.PI / 180) - 10}px`,
-                  width: 20,
-                  height: 20,
-                  background: 'var(--primary-border, #2451D7)',
-                  borderRadius: '50%',
-                  zIndex: 10,
-                }}
-              />             <div
-                className="absolute"
-                style={{
-                  top: '450px',
-                  left: '-250px',
-                  zIndex: 2,
-                  transform: "rotate(-45deg)"
-                }}
-              >
-                <Image src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
+          {isTabletOrMobile ? (
+            <div className="flex flex-col items-center w-full">
+              <p className="text-[#1F1B3B] text-base md:text-lg font-medium mb-8 max-w-[300px] text-center">
+                {t('circularidad_texto')}
+              </p>
+              <div className="flex flex-row gap-2 justify-center w-full">
+                <Image
+                  src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
                   alt={t('circularidad_residuos_alt')}
                   width={200}
-                  height={60} />
-              </div>
-              <div
-                className="absolute"
-                style={{
-                  bottom: '450px',
-                  right: '-250px',
-                  zIndex: 2,
-                  transform: "rotate(-45deg)"
-                }}
-              >
+                  height={40}
+                />
                 <Image
                   src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
                   alt={t('circularidad_materiales_alt')}
                   width={200}
-                  height={60}
-                />              </div>
-              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center" style={{ transform: "rotate(-45deg)" }}>
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
-                  <p className="text-[#1F1B3B] text-left text-base md:text-lg font-medium max-w-[300px]">
-                    {t('circularidad_texto')}
-                  </p>
+                  height={40}
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="flex justify-center w-full overflow-hidden">
+              <div
+                className="relative flex justify-center items-center"
+                style={{
+                  width: 400,
+                  height: 800,
+                  transform: "rotate(45deg)",
+                  transformOrigin: "200px 400px",
+                }}
+              >
+                <svg
+                  width="400"
+                  height="800"
+                  viewBox="0 0 400 800"
+                  className="block absolute top-0 left-0"
+                  style={{ zIndex: 2 }}
+                >
+                  <ellipse cx="200" cy="400" rx="180" ry="380" fill="none" stroke='var(--primary-border)' strokeWidth="3" />
+                </svg>
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: `${200 + 180 * Math.cos(angle * Math.PI / 180) - 10}px`,
+                    top: `${400 + 380 * Math.sin(angle * Math.PI / 180) - 10}px`,
+                    width: 20,
+                    height: 20,
+                    background: 'var(--primary-border, #2451D7)',
+                    borderRadius: '50%',
+                    zIndex: 10,
+                  }}
+                />
+                <div
+                  className="absolute"
+                  style={{
+                    top: '450px',
+                    left: '-250px',
+                    zIndex: 2,
+                    transform: "rotate(-45deg)"
+                  }}
+                >
+                  <Image src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
+                    alt={t('circularidad_residuos_alt')}
+                    width={200}
+                    height={60} />
+                </div>
+                <div
+                  className="absolute"
+                  style={{
+                    bottom: '450px',
+                    right: '-250px',
+                    zIndex: 2,
+                    transform: "rotate(-45deg)"
+                  }}
+                >
+                  <Image
+                    src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
+                    alt={t('circularidad_materiales_alt')}
+                    width={200}
+                    height={60}
+                  />
+                </div>
+                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center" style={{ transform: "rotate(-45deg)" }}>
+                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
+                    <p className="text-[#1F1B3B] text-left text-base md:text-lg font-medium max-w-[300px]">
+                      {t('circularidad_texto')}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
-      <section className="w-full flex flex-col items-center py-16 ">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-20 text-[#1F1B3B]">{t('servicios_titulo')}</h2>
-        <div className="w-full max-w-6xl flex items-center justify-center relative h-[400px]">
-          <div className="relative w-full h-[400px] flex items-center justify-center">
+      <section className="w-full flex flex-col items-center py-0 sm:py-16 ">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 md:mb-20 text-[#1F1B3B]">{t('servicios_titulo')}</h2>
+        <div className="w-full max-w-6xl flex flex-col lg:flex-row items-center justify-center relative h-auto lg:h-[400px]">
+          <div className="relative w-full lg:w-1/2 h-[400px] flex items-center justify-center order-1 lg:order-none">
             {cards.map((card, i) => {
+              const width = typeof window !== "undefined" ? window.innerWidth : 1024;
               const pos = (i - activeIndex + cards.length) % cards.length;
               const zIndex = 10 - pos;
-              const scale = 1 - pos * 0.08;
-              const translateX = pos * 100;
+              let scale = 1 - pos * 0.08;
+              if (width >= 640 && width < 1024) {
+                scale = 1 - pos * 0.20;
+              }
+              const isMobile = typeof window !== "undefined" ? window.innerWidth <= 768 : false;
+              const translateX = pos * (isMobile ? 30 : 100);
               const opacity = pos === 0 ? 1 : 0.8 - pos * 0.2;
               return (
                 <div
                   key={i}
                   className={
-                    `absolute left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg p-8 flex flex-col min-h-[350px] w-full md:w-3/5 max-w-3xl font-poppins transition-all duration-500 cursor-pointer ${pos === 0 ? '' : 'hover:scale-105'}`
+                    `absolute left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg p-8 flex flex-col w-[90vw] sm:w-[70vw] md:w-3/5 max-w-md font-poppins transition-all duration-500 cursor-pointer ${pos === 0 ? '' : 'hover:scale-105'}`
                   }
                   style={{
                     zIndex,
@@ -168,7 +214,7 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="relative w-full h-[400px] flex items-center justify-center">
+          <div className="relative w-full lg:w-1/2 h-[300px] flex items-center justify-center order-2 lg:order-none mt-8 lg:mt-0">
             {["/pages/inicio/servicio1-inicio.jpg", "/pages/inicio/servicio2-inicio.jpg"].map((img, idx) => (
               <Image
                 key={img}
@@ -184,96 +230,189 @@ export default function Home() {
       </section>
       <section className="w-full flex flex-col items-center py-16">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-30 text-[#1F1B3B]">{t('productos_titulo')}</h2>
-        <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mb-10">
-          <div
-            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
-            style={{ borderColor: 'var(--diametro-color)' }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
-            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
-          >
-            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
-              {t('productos.agregados').split('\n').map((line, idx) => (
-                <React.Fragment key={idx}>
-                  {line}
-                  {idx < t('productos.agregados').split('\n').length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </h4>
-            <Image
-              src={isDark ? "/pages/inicio/agregado-white.png" : "/pages/inicio/agregado.png"}
-              alt={t('productos.agregados').replace(/\n/g, ' ')}
-              width={140}
-              height={140}
-              className="mt-2 transition-transform duration-300 group-hover:scale-110"
-            />
+        {isTablet ? (
+          <div className="grid grid-cols-2 grid-rows-2 gap-6 w-full max-w-4xl mb-10 justify-items-center">
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.agregados').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.agregados').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/agregado-white.png" : "/pages/inicio/agregado.png"}
+                alt={t('productos.agregados').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.adoquines').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.adoquines').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/adoquin-white.png" : "/pages/inicio/adoquin.png"}
+                alt={t('productos.adoquines').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.ladrillos').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.ladrillos').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/ladrillo-white.png" : "/pages/inicio/ladrillo.png"}
+                alt={t('productos.ladrillos').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.separadores').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.separadores').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/separador-white.png" : "/pages/inicio/separador.png"}
+                alt={t('productos.separadores').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
           </div>
-          <div
-            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
-            style={{ borderColor: 'var(--diametro-color)' }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
-            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
-          >
-            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
-              {t('productos.adoquines').split('\n').map((line, idx) => (
-                <React.Fragment key={idx}>
-                  {line}
-                  {idx < t('productos.adoquines').split('\n').length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </h4>
-            <Image
-              src={isDark ? "/pages/inicio/adoquin-white.png" : "/pages/inicio/adoquin.png"}
-              alt={t('productos.adoquines').replace(/\n/g, ' ')}
-              width={140}
-              height={140}
-              className="mt-2 transition-transform duration-300 group-hover:scale-110"
-            />
-          </div>
-          <div
-            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
-            style={{ borderColor: 'var(--diametro-color)' }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
-            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
-          >
-            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
-              {t('productos.ladrillos').split('\n').map((line, idx) => (
-                <React.Fragment key={idx}>
-                  {line}
-                  {idx < t('productos.ladrillos').split('\n').length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </h4>
-            <Image
-              src={isDark ? "/pages/inicio/ladrillo-white.png" : "/pages/inicio/ladrillo.png"}
-              alt={t('productos.ladrillos').replace(/\n/g, ' ')}
-              width={140}
-              height={140}
-              className="mt-2 transition-transform duration-300 group-hover:scale-110"
-            />
-          </div>
-          <div
-            className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
-            style={{ borderColor: 'var(--diametro-color)' }}
-            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
-            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
-          >
-            <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
-              {t('productos.separadores').split('\n').map((line, idx) => (
-                <React.Fragment key={idx}>
-                  {line}
-                  {idx < t('productos.separadores').split('\n').length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </h4>
-            <Image
-              src={isDark ? "/pages/inicio/separador-white.png" : "/pages/inicio/separador.png"}
-              alt={t('productos.separadores').replace(/\n/g, ' ')}
-              width={140}
-              height={140}
-              className="mt-2 transition-transform duration-300 group-hover:scale-110"
-            />
-          </div>
-        </div>
+        ) : (
+
+          <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl mb-10">
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.agregados').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.agregados').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/agregado-white.png" : "/pages/inicio/agregado.png"}
+                alt={t('productos.agregados').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.adoquines').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.adoquines').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/adoquin-white.png" : "/pages/inicio/adoquin.png"}
+                alt={t('productos.adoquines').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.ladrillos').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.ladrillos').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/ladrillo-white.png" : "/pages/inicio/ladrillo.png"}
+                alt={t('productos.ladrillos').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div
+              className="flex flex-col items-center justify-center border-2 rounded-full w-72 h-72 -mx-3 aspect-square transition-all duration-300 group"
+              style={{ borderColor: 'var(--diametro-color)' }}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--primary-border)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--diametro-color)'}
+            >
+              <h4 className="text-[#2451D7] text-lg font-semibold mb-2 text-center">
+                {t('productos.separadores').split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    {idx < t('productos.separadores').split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h4>
+              <Image
+                src={isDark ? "/pages/inicio/separador-white.png" : "/pages/inicio/separador.png"}
+                alt={t('productos.separadores').replace(/\n/g, ' ')}
+                width={140}
+                height={140}
+                className="mt-2 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+          </div>)}
       </section>
       <section className="relative bg-[#2451D7] py-40 mt-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -290,8 +429,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
-
