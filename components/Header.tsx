@@ -68,7 +68,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Image
-              src={isDarkMode ? "/img/ciclo-white.png" : "/img/ciclo-logo.png"}
+              src={isDarkMode ? "/img/ciclo-white.webp" : "/img/ciclo-logo.png"}
               alt="Ciclo Logo"
               width={140}
               height={45}
