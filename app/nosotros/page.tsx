@@ -135,25 +135,45 @@ export default function NosotrosPage() {
                     {t('politicas_intro')}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 px-4 sm:px-6 lg:px-8">
-                    {Object.values(t('politicas', { returnObjects: true })).slice(0, 3).map((pol: string, i: number) => (
-                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-bricolage shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                            <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-                                <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
-                            </svg>
-                            <span className="text-base font-medium text-[#1F1B3B]">{pol}</span>
-                        </div>
+                    {Object.values(t('politicas', { returnObjects: true })).slice(0, 3).map((pol: { titulo: string; file: string }, i: number) => (
+                        <a
+                            key={i}
+                            href={pol.file}
+                            download
+                            className="bg-[#E5E5E5] rounded-lg flex flex-col items-start gap-4 px-6 py-5 font-bricolage shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2 no-underline"
+                            style={{ textDecoration: 'none' }}
+                            aria-label={`Descargar ${pol.titulo}`}
+                        >
+                            <div className="flex items-center gap-4 mb-2">
+                                <img
+                                    src="/img/Icon.svg"
+                                    alt="icon"
+                                    className="w-8 h-8"
+                                />
+                                <span className="text-base font-medium text-[#1F1B3B]">{pol.titulo}</span>
+                            </div>
+                        </a>
                     ))}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 px-4 sm:px-6 lg:px-8">
-                    {Object.values(t('politicas', { returnObjects: true })).slice(3).map((pol: string, i: number) => (
-                        <div key={i} className="bg-[#E5E5E5] rounded-lg flex items-center gap-4 px-6 py-5 font-bricolage shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2">
-                            <svg className="w-8 h-8 text-[#1F1B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
-                                <path d="M7 7h10M7 11h10M7 15h6" strokeWidth="2" />
-                            </svg>
-                            <span className="text-base font-medium text-[#1F1B3B]">{pol}</span>
-                        </div>
+                    {Object.values(t('politicas', { returnObjects: true })).slice(3).map((pol: { titulo: string; file: string }, i: number) => (
+                        <a
+                            key={i}
+                            href={pol.file}
+                            download
+                            className="bg-[#E5E5E5] rounded-lg flex flex-col items-start gap-4 px-6 py-5 font-bricolage shadow cursor-pointer transition-transform duration-300 hover:-translate-y-2 no-underline"
+                            style={{ textDecoration: 'none' }}
+                            aria-label={`Descargar ${pol.titulo}`}
+                        >
+                            <div className="flex items-center gap-4 mb-2">
+                                <img
+                                    src="/img/Icon.svg"
+                                    alt="icon"
+                                    className="w-8 h-8"
+                                />
+                                <span className="text-base font-medium text-[#1F1B3B]">{pol.titulo}</span>
+                            </div>
+                        </a>
                     ))}
                 </div>
             </section>
