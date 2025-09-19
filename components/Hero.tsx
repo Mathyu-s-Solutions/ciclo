@@ -76,7 +76,6 @@ export default function Hero() {
   return (
     <main className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-3">
       <div className="flex flex-col md:flex-row justify-between items-center min-h-[80vh] g-60">
-        {/* Lado izquierdo: contenido original */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-start mb-10 md:mb-0">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#2451D7] mb-6">
             {t('hero_titulo')}
@@ -91,11 +90,10 @@ export default function Hero() {
             {t('hero_boton')}
           </button>
         </div>
-        {/* Lado derecho: efecto 3D */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
-          <div style={{ width: 600, height: 600, position: 'relative' }}>
+          <div className="w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] aspect-square relative">
             <Canvas
-              style={{ width: 600, height: 600, background: 'transparent', borderRadius: '50%' }}
+              style={{ width: '100%', height: '100%', background: 'transparent', borderRadius: '50%' }}
               camera={{ position: [0, 0, 12], fov: 50 }}
             >
               <ambientLight intensity={-0.82} />
