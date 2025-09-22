@@ -43,23 +43,23 @@
     "politicas_intro": "Accede a nuestras políticas que forman parte de nuestro Sistema Integrado de Gestión y que reflejan nuestro compromiso con la calidad, el cuidado del medio ambiente y la seguridad.",
     "politicas": [
         {
-            "titulo": "Unsafe Work Refusal Policy",
+            "titulo": "Política de Negativa al Trabajo Inseguro",
             "file": "/docs/SSOMA-PO1 Política de negativa al trabajo inseguro-V2.pdf"
         },
         {
-            "titulo": "SIG Policy",
+            "titulo": "Política SIG",
             "file": "/docs/SIG-PO1 Política SIG -V2.pdf"
         },
         {
-            "titulo": "Labor Inclusion Policy",
+            "titulo": "Política de Inclusión Laboral",
             "file": "/docs/RRHH-PO1 Política de Inclusión Laboral-V2.pdf"
         },
         {
-            "titulo": "Fatigue and Drowsiness Policy",
+            "titulo": "Política de Fatiga y Somnolencia",
             "file": "/docs/SSOMA-PO2 Política de fatiga y somnolencia-V2-.pdf"
         },
         {
-            "titulo": "Scope of the Integrated Management System",
+            "titulo": "Alcance del Sistema Integrado de Gestión",
             "file": "/docs/SIG-FR1 Alcance del Sistema Integrado de Gestión v.02.pdf"
         }
     ]
