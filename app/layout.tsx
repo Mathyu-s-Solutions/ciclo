@@ -37,7 +37,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <Link
-              href="https://wa.me/51938219066?text=Hola%20Ciclo%20-%20MP%20Recicla%20S.A.C."
+              href="https://wa.me/51901211995?text=Hola%20Ciclo%20-%20MP%20Recicla%20S.A.C."
               target="_blank"
               rel="noopener noreferrer"
               style={{

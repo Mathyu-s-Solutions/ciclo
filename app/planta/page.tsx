@@ -12,7 +12,7 @@ export default function PlantaPage() {
             </p>
             <div className="rounded-lg flex items-center justify-center aspect-video mb-10 px-4 sm:px-6 lg:px-8">
                 <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    src="https://www.youtube.com/embed/apUMqChiLgk"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
