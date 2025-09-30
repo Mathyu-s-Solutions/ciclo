@@ -117,7 +117,7 @@ export default function ProductosPage() {
                     {t('titulo')}
                 </motion.h1>
                 <motion.div
-                    className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10"
+                    className="sticky top-0 z-20 flex flex-wrap justify-center gap-10 mb-12 py-10 hidden sm:flex"
                     style={{ background: 'var(--primary-bg)' }}
                     initial="hidden"
                     animate="visible"
@@ -152,11 +152,9 @@ export default function ProductosPage() {
                 </motion.div>
                 <div className="flex flex-col gap-20 px-4 sm:px-6 lg:px-8">
                     {productos.map((p, i) => {
-                        // Alterna animación de círculo: izquierda/derecha
                         const circleAnim = i % 2 === 0
                             ? { initial: "hiddenLeft", animate: "visibleLeft" }
                             : { initial: "hiddenRight", animate: "visibleRight" };
-                        // Datos del producto
                         const imgSrc = [
                             "/pages/productos/agregados.png",
                             "/pages/productos/adoquin.png",
@@ -236,7 +234,7 @@ export default function ProductosPage() {
                     })}
                 </div>
             </motion.main>
-            <section className="relative bg-[#52B2EB] py-40 mt-20">
+            <section className="relative bg-[#52B2EB] py-16 md:py-40 mt-20">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
                     <motion.div
                         className="w-full md:w-2/3 text-left"

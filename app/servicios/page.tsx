@@ -82,7 +82,7 @@ export default function ServiciosPage() {
                 </div>
             </main>
 
-            <section className="relative bg-[#2451D7] py-40 mt-20">
+            <section className="relative bg-[#2451D7] py-16 md:py-40 mt-20">
                 <motion.div
                     className="max-w-3xl mx-auto text-center px-4"
                     initial={{ opacity: 0, y: 60 }}

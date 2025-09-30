@@ -233,8 +233,7 @@ export default function Home() {
             <div className="relative w-[320px] h-[320px] flex items-center justify-center group transition-all duration-300 hover:scale-105">
 
               <button
-                className="absolute left-[-56px] top-1/2 -translate-y-1/2 text-[#2451D7] text-4xl font-bold bg-transparent border-none p-0 m-0 cursor-pointer"
-
+                className="hidden md:block absolute left-[-56px] top-1/2 -translate-y-1/2 text-[#2451D7] text-4xl font-bold bg-transparent border-none p-0 m-0 cursor-pointer"
                 onClick={() => setActiveIndex((activeIndex - 1 + cards.length) % cards.length)}
                 aria-label="Anterior servicio"
                 style={{ opacity: 0.9 }}
@@ -258,14 +257,31 @@ export default function Home() {
                 </div>
               </div>
               <button
-                className="absolute right-[-56px] top-1/2 -translate-y-1/2 text-[#2451D7] text-4xl font-bold bg-transparent border-none p-0 m-0 cursor-pointer"
-
+                className="hidden md:block absolute right-[-56px] top-1/2 -translate-y-1/2 text-[#2451D7] text-4xl font-bold bg-transparent border-none p-0 m-0 cursor-pointer"
                 onClick={() => setActiveIndex((activeIndex + 1) % cards.length)}
                 aria-label="Siguiente servicio"
                 style={{ opacity: 0.9 }}
               >
                 {">"}
               </button>
+              <div className="flex md:hidden w-full justify-center gap-10 absolute left-0 -bottom-12">
+                <button
+                  className="text-[#2451D7] text-4xl font-bold bg-transparent border-none p-0 m-0 cursor-pointer"
+                  onClick={() => setActiveIndex((activeIndex - 1 + cards.length) % cards.length)}
+                  aria-label="Anterior servicio"
+                  style={{ opacity: 0.9 }}
+                >
+                  {"<"}
+                </button>
+                <button
+                  className="text-[#2451D7] text-4xl font-bold bg-transparent border-none p-0 m-0 cursor-pointer"
+                  onClick={() => setActiveIndex((activeIndex + 1) % cards.length)}
+                  aria-label="Siguiente servicio"
+                  style={{ opacity: 0.9 }}
+                >
+                  {">"}
+                </button>
+              </div>
             </div>
           </motion.div>
           <motion.div
@@ -482,32 +498,31 @@ export default function Home() {
             </div>
           </div>)}
       </section>
-      <section className="relative bg-[#2451D7] py-40 mt-20">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-          <motion.div
-            className="w-full md:w-2/3 text-left"
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6 }}
+      <section className="relative bg-[#2451D7] py-16 md:py-40 mt-20">        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+        <motion.div
+          className="w-full md:w-2/3 text-left"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-xl sm:text-3xl mb-8">{t('cta.descripcion')}</h3>
+        </motion.div>
+        <motion.div
+          className="w-full md:w-1/3 flex md:justify-end justify-center"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <button
+            className="bg-[#F2F2F2] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200 cursor-pointer"
+            onClick={() => router.push('/contacto')}
           >
-            <h3 className="text-xl sm:text-3xl mb-8">{t('cta.descripcion')}</h3>
-          </motion.div>
-          <motion.div
-            className="w-full md:w-1/3 flex md:justify-end justify-center"
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <button
-              className="bg-[#F2F2F2] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200 cursor-pointer"
-              onClick={() => router.push('/contacto')}
-            >
-              {t('cta.boton')}
-            </button>
-          </motion.div>
-        </div>
+            {t('cta.boton')}
+          </button>
+        </motion.div>
+      </div>
       </section>
     </>
   );
