@@ -4,6 +4,7 @@ import { useState } from "react";
 import emailjs from 'emailjs-com';
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export default function ContactoPage() {
     const { t } = useTranslation("contacto");
@@ -64,75 +65,98 @@ export default function ContactoPage() {
     }
 
     return (
-        <main className="max-w-6xl mx-auto px-4 py-12 font-bricolage">
+        <motion.main
+            className="max-w-6xl mx-auto px-4 py-12 font-bricolage"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.5 }}
+        >
             <div className="flex flex-col md:flex-row items-start gap-8">
                 <div className="flex flex-col w-full md:w-2/3">
                     <div className="px-4 sm:px-6 lg:px-8">
-                        <h1 className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium">
+                        <motion.h1
+                            className="my-8 max-w-2xl text-2xl sm:text-3xl lg:text-4xl font-medium"
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                        >
                             {t('titulo')}
-                        </h1>
-                        <p className="mb-10 text-base sm:text-xl lg:text-2xl">
+                        </motion.h1>
+                        <motion.p
+                            className="mb-10 text-base sm:text-xl lg:text-2xl"
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
                             {t('descripcion')}
-                        </p>
-                        <div className="bg-white rounded-lg p-8 w-full max-w-md shadow flex flex-col gap-4 mb-20 md:mb-30">
-                            <div className="flex flex-col gap-4">
-                                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                                    <label className="font-medium text-[#1F1B3B]" htmlFor="nombre">{t('nombre')}</label>
-                                    <input
-                                        name="nombre"
-                                        id="nombre"
-                                        className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.nombre ? 'border-red-500' : ''}`}
-                                        placeholder={t('placeholder')}
-                                        value={form.nombre}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.nombre && <span className="text-red-500 text-sm">{errors.nombre}</span>}
+                        </motion.p>
+                        <motion.div
+                            className="bg-white rounded-lg p-8 w-full max-w-md shadow flex flex-col gap-4 mb-20 md:mb-30"
+                            initial={{ opacity: 0, x: 60 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                        >
+                            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                                <label className="font-medium text-[#1F1B3B]" htmlFor="nombre">{t('nombre')}</label>
+                                <input
+                                    name="nombre"
+                                    id="nombre"
+                                    className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.nombre ? 'border-red-500' : ''}`}
+                                    placeholder={t('placeholder')}
+                                    value={form.nombre}
+                                    onChange={handleChange}
+                                />
+                                {errors.nombre && <span className="text-red-500 text-sm">{errors.nombre}</span>}
 
-                                    <label className="font-medium text-[#1F1B3B]" htmlFor="email">{t('email')}</label>
-                                    <input
-                                        name="email"
-                                        id="email"
-                                        className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.email ? 'border-red-500' : ''}`}
-                                        placeholder={t('placeholder')}
-                                        value={form.email}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
+                                <label className="font-medium text-[#1F1B3B]" htmlFor="email">{t('email')}</label>
+                                <input
+                                    name="email"
+                                    id="email"
+                                    className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.email ? 'border-red-500' : ''}`}
+                                    placeholder={t('placeholder')}
+                                    value={form.email}
+                                    onChange={handleChange}
+                                />
+                                {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
 
-                                    <label className="font-medium text-[#1F1B3B]" htmlFor="asunto">{t('asunto')}</label>
-                                    <input
-                                        name="asunto"
-                                        id="asunto"
-                                        className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.asunto ? 'border-red-500' : ''}`}
-                                        placeholder={t('placeholder')}
-                                        value={form.asunto}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.asunto && <span className="text-red-500 text-sm">{errors.asunto}</span>}
+                                <label className="font-medium text-[#1F1B3B]" htmlFor="asunto">{t('asunto')}</label>
+                                <input
+                                    name="asunto"
+                                    id="asunto"
+                                    className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.asunto ? 'border-red-500' : ''}`}
+                                    placeholder={t('placeholder')}
+                                    value={form.asunto}
+                                    onChange={handleChange}
+                                />
+                                {errors.asunto && <span className="text-red-500 text-sm">{errors.asunto}</span>}
 
-                                    <label className="font-medium text-[#1F1B3B]" htmlFor="mensaje">{t('mensaje')}</label>
-                                    <textarea
-                                        name="mensaje"
-                                        id="mensaje"
-                                        className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.mensaje ? 'border-red-500' : ''}`}
-                                        rows={3}
-                                        placeholder={t('placeholder')}
-                                        value={form.mensaje}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.mensaje && <span className="text-red-500 text-sm">{errors.mensaje}</span>}
+                                <label className="font-medium text-[#1F1B3B]" htmlFor="mensaje">{t('mensaje')}</label>
+                                <textarea
+                                    name="mensaje"
+                                    id="mensaje"
+                                    className={`border border-[#B3B3B3] rounded-[8px] px-4 py-2 ${errors.mensaje ? 'border-red-500' : ''}`}
+                                    rows={3}
+                                    placeholder={t('placeholder')}
+                                    value={form.mensaje}
+                                    onChange={handleChange}
+                                />
+                                {errors.mensaje && <span className="text-red-500 text-sm">{errors.mensaje}</span>}
 
-                                    <button type="submit" className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg mt-4 hover:bg-[#1F1B3B] hover:text-[#FFD34E] transition-colors duration-200 cursor-pointer">
-                                        {t('enviar')}
-                                    </button>
-                                    {status && <span className="text-sm mt-2">{status}</span>}
-                                </form>
-                            </div>
-
-                        </div>
+                                <button type="submit" className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-6 py-2 rounded-lg mt-4 hover:bg-[#1F1B3B] hover:text-[#FFD34E] transition-colors duration-200 cursor-pointer">
+                                    {t('enviar')}
+                                </button>
+                                {status && <span className="text-sm mt-2">{status}</span>}
+                            </form>
+                        </motion.div>
                     </div>
                 </div>
-                <div className="relative flex justify-center items-center w-full md:w-1/3 max-w-xs self-center md:self-start mt-0 md:mt-60">
+                <motion.div
+                    className="relative flex justify-center items-center w-full md:w-1/3 max-w-xs self-center md:self-start mt-0 md:mt-60"
+                    initial={{ opacity: 0, x: -60 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                >
                     <div
                         className="absolute -top-10 left-7/8 md:left-3/4 -translate-x-1/2 flex items-center justify-center w-36 h-20"
                         style={{
@@ -150,8 +174,8 @@ export default function ContactoPage() {
                         alt="iPhone"
                         height={384}
                     />
-                </div>
+                </motion.div>
             </div>
-        </main>
+        </motion.main>
     );
 }

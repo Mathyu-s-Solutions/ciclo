@@ -6,6 +6,7 @@ import { useTheme } from "../context/ThemeContext";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 export default function Header() {
   const { t, i18n } = useTranslation("common");
@@ -67,14 +68,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <Image
-              src={isDarkMode ? "/img/ciclo-white.webp" : "/img/ciclo-logo.png"}
-              alt="Ciclo Logo"
-              width={140}
-              height={45}
-              priority
-              className="h-18 w-auto object-contain"
-            />
+            <Link href="/inicio">
+              <Image
+                src={isDarkMode ? "/img/ciclo-white.webp" : "/img/ciclo-logo.png"}
+                alt="Ciclo Logo"
+                width={140}
+                height={45}
+                priority
+                className="h-18 w-auto object-contain"
+                style={{ cursor: "pointer" }}
+              />
+            </Link>
           </div>
 
           <div className="hidden lg:block">
