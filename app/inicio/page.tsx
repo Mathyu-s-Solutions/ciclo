@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import '../../styles/spin-variable.css';
 import { useTheme } from "@/context/ThemeContext";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -84,18 +85,24 @@ export default function Home() {
                 {t('circularidad_texto')}
               </p>
               <div className="flex flex-row gap-2 justify-center w-full">
-                <Image
-                  src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
-                  alt={t('circularidad_residuos_alt')}
-                  width={200}
-                  height={40}
-                />
-                <Image
-                  src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
-                  alt={t('circularidad_materiales_alt')}
-                  width={200}
-                  height={40}
-                />
+                <Link href="/servicios">
+                  <Image
+                    src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
+                    alt={t('circularidad_residuos_alt')}
+                    width={200}
+                    height={40}
+                    style={{ cursor: "pointer" }}
+                  />
+                </Link>
+                <Link href="/productos">
+                  <Image
+                    src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
+                    alt={t('circularidad_materiales_alt')}
+                    width={200}
+                    height={40}
+                    style={{ cursor: "pointer" }}
+                  />
+                </Link>
               </div>
             </div>
           ) : (
@@ -139,10 +146,15 @@ export default function Home() {
                     transform: "rotate(-45deg)"
                   }}
                 >
-                  <Image src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
-                    alt={t('circularidad_residuos_alt')}
-                    width={230}
-                    height={60} />
+                  <Link href="/servicios">
+                    <Image
+                      src={isDark ? "/pages/inicio/residuos-white.png" : "/pages/inicio/residuos.png"}
+                      alt={t('circularidad_residuos_alt')}
+                      width={230}
+                      height={60}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </Link>
                 </div>
                 <div
                   className="absolute"
@@ -153,12 +165,15 @@ export default function Home() {
                     transform: "rotate(-45deg)"
                   }}
                 >
-                  <Image
-                    src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
-                    alt={t('circularidad_materiales_alt')}
-                    width={230}
-                    height={60}
-                  />
+                  <Link href="/productos">
+                    <Image
+                      src={isDark ? "/pages/inicio/materiales-white.png" : "/pages/inicio/materiales.png"}
+                      alt={t('circularidad_materiales_alt')}
+                      width={230}
+                      height={60}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </Link>
                 </div>
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center" style={{ transform: "rotate(-45deg)" }}>
                   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>

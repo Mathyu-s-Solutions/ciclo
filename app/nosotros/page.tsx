@@ -29,7 +29,7 @@ export default function NosotrosPage() {
                         </p>
                     </div>
                     <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-                        <div className="w-80 h-48 md:w-[28rem] md:h-64 rounded-lg overflow-hidden">
+                        <div className="w-80 h-48 md:w-[30rem] md:h-75 rounded-lg overflow-hidden">
                             <Image src="/pages/nosotros/personal.jpg" alt="Fondo" width={400} height={220} className="object-cover w-full h-full" />
                         </div>
                     </div>

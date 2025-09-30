@@ -97,7 +97,7 @@ export default function Hero() {
               camera={{ position: [0, 0, 12], fov: 50 }}
             >
               <ambientLight intensity={-0.82} />
-              <TextRing text="Transformar para inspirar" color={getComputedStyle(document.documentElement).getPropertyValue('--orb-color').trim() || '#2451D7'} />
+              <TextRing text="Transformar para inspirar" color={getComputedStyle(document.documentElement).getPropertyValue('--text-ring').trim() || '#2451D7'} />
               <CenterImage src="/img/worker.webp" />
             </Canvas>
           </div>

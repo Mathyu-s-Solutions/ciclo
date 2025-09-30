@@ -17,6 +17,7 @@
   --primary-bg: #F2F2F2;
   --primary-border: #2451D7;
   --orb-color: #2451D7;
+  --text-ring: #2451D7;
   --diametro-color: #171717;
 }
 
@@ -27,6 +28,7 @@
   --primary-bg: #1F1B3B;
   --primary-border: #FFD44D;
   --orb-color: #FFD44D;
+  --text-ring: #52B2EB;
   --diametro-color: #52B2EB;
 }
 
