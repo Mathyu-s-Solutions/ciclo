@@ -4,6 +4,7 @@ import { useRef, useMemo } from "react";
 import * as THREE from "three";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function createTextCanvas(text: string, color: string) {
   const fontSize = 200;
@@ -76,31 +77,51 @@ export default function Hero() {
   return (
     <main className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-3">
       <div className="flex flex-col md:flex-row justify-between items-center min-h-[80vh] g-60">
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-start mb-10 md:mb-0">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#2451D7] mb-6">
+        <motion.div
+          className="w-full md:w-1/2 flex flex-col justify-center items-start mb-10 md:mb-0"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {},
+          }}
+        >
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#2451D7] mb-6"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0 }}
+          >
             {t('hero_titulo')}
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-[#1F1B3B] mb-8 max-w-lg">
+          </motion.h1>
+          <motion.p
+            className="text-lg sm:text-xl lg:text-2xl text-[#1F1B3B] mb-8 max-w-lg"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             {t('hero_texto')}
-          </p>
-          <button
+          </motion.p>
+          <motion.button
             className="bg-[#FFD34E] text-[#1F1B3B] font-medium px-8 py-4 rounded-lg text-xl shadow transition-colors duration-200 cursor-pointer"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             onClick={() => window.location.href = '/contacto'}
           >
             {t('hero_boton')}
-          </button>
-        </div>
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <div className="w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] aspect-square relative">
-            <Canvas
-              style={{ width: '100%', height: '100%', background: 'transparent', borderRadius: '50%' }}
-              camera={{ position: [0, 0, 12], fov: 50 }}
-            >
-              <ambientLight intensity={-0.82} />
-              <TextRing text="Transformar para inspirar" color={getComputedStyle(document.documentElement).getPropertyValue('--text-ring').trim() || '#2451D7'} />
-              <CenterImage src="/img/worker.webp" />
-            </Canvas>
-          </div>
+          </motion.button>
+        </motion.div>
+
+        <div className="w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] aspect-square relative">
+          <Canvas
+            style={{ width: '100%', height: '100%', background: 'transparent', borderRadius: '50%' }}
+            camera={{ position: [0, 0, 12], fov: 50 }}
+          >
+            <ambientLight intensity={-0.82} />
+            <TextRing text="Transformar para inspirar" color={getComputedStyle(document.documentElement).getPropertyValue('--text-ring').trim() || '#2451D7'} />
+            <CenterImage src="/img/worker.webp" />
+          </Canvas>
         </div>
       </div>
     </main>
